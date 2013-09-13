@@ -41,7 +41,7 @@ local.properties
 *.sln.docstates
 
 # Build results
-
+[Bb]in/
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
