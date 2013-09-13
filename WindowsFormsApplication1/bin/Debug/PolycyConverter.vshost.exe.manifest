@@ -66,14 +66,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PolycyConverter.exe" size="183808">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PolycyConverter.exe" size="184832">
       <assemblyIdentity name="PolycyConverter" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>WEjPGqWn+Jm/v1Cj1WiXBMb7YB8=</dsig:DigestValue>
+        <dsig:DigestValue>hmmkcRQPWyXOKWI/I76uY3Ry1WQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

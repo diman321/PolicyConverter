@@ -37,3 +37,4 @@ C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\Windo
 C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\obj\Debug\PolicyConverter.csproj.GenerateResource.Cache
 C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\obj\Debug\PolycyConverter.exe.manifest
 C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\obj\Debug\PolycyConverter.application
+C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\obj\Debug\PolicyConverter.csprojResolveAssemblyReference.cache

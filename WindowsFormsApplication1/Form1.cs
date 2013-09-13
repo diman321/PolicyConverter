@@ -18,11 +18,30 @@ namespace WindowsFormsApplication1
             InitializeComponent();
         }
 
+        public struct ResolvedNetObj
+        {   
+            public string NetObjName;
+            public List<List<string>> ResolvedObj;
+            private bool IsObjectNegated;
+
+            public ResolvedNetObj(string p)
+            {
+                NetObjName = p;
+                ResolvedObj = ResolveNetObj(p);
+                IsObjectNegated = false;
+            }
+
+            public ResolvedNetObj(string p, bool n)
+            {
+                NetObjName = p;
+                ResolvedObj = ResolveNetObj(p);
+                IsObjectNegated = n;
+            }
+
+        }
+
         public static List<List<string>> CurrentErrorObjResolved = new List<List<string>>();
 
-        //public static Thread t = new Thread(new ThreadStart(RunSplash));
-
-        //public static Thread tbad = new Thread(new ThreadStart(RunBadSplash));    
 
         public static List<List<string>> Rules = new List<List<string>>();
         public static List<List<IEnumerable<string>>> NetworkObj = new List<List<IEnumerable<string>>>();
@@ -462,30 +481,25 @@ namespace WindowsFormsApplication1
 
                         ///
                         /// Это для Source
+                        /// Есть структура данных ResolvedNetObj, которая содержит
+                        /// отрезолвленные члены группового объекта
+                        /// Создадим список из структуры ResolvedNetObj который будет содержать
+                        /// все объекты ячейки источник из политики
                         ///
-
+                        
                         List<string> CurrentSourceNetObj = row[2].Split(split, StringSplitOptions.RemoveEmptyEntries).ToList();
-                        List<List<string>> CurrentSourceNetObjResolved = new List<List<string>>();
-
+                        
                         progressBar2.Maximum = CurrentSourceNetObj.Count;
                         progressBar2.Value = 0;
+
+                        List<ResolvedNetObj> CurrentSrc = new List<ResolvedNetObj>();
 
                         foreach (string OneNetObj in CurrentSourceNetObj)
                         {
                             string s = OneNetObj.Replace("Not ", "").Trim();
-                            List<List<string>> tmp  = ResolveNetObj(OneNetObj.Replace("Not ", "").Trim());
-                            if (OneNetObj.Contains("Not "))
-                                for (int b = 0; b < tmp.Count; b++)
-                                    tmp[b][0] = "Not " + tmp[b][0];
-                            
-                            if (stopped)
-                            {
-                                OnMyEvent();
-                                WB.Close(false);
-                                ObjExcel.Quit();
-                                return;
-                            }
-                            CurrentSourceNetObjResolved.AddRange(tmp);
+                            ResolvedNetObj TmpRNO = new ResolvedNetObj(s, OneNetObj.Contains("Not "));
+                            CurrentSrc.Add(TmpRNO);
+
                             progressBar2.Value++;
                             System.Windows.Forms.Application.DoEvents();
                         }
@@ -499,29 +513,22 @@ namespace WindowsFormsApplication1
                         ///
 
                         List<string> CurrentDestNetObj = row[3].Split(split, StringSplitOptions.RemoveEmptyEntries).ToList();
-                        List<List<string>> CurrentDestNetObjResolved = new List<List<string>>();
 
                         progressBar2.Maximum = CurrentDestNetObj.Count;
                         progressBar2.Value = 0;
 
+                        List<ResolvedNetObj> CurrentDst = new List<ResolvedNetObj>();
+
                         foreach (string OneNetObj in CurrentDestNetObj)
                         {
                             string s = OneNetObj.Replace("Not ", "").Trim();
-                            List<List<string>> tmp = ResolveNetObj(OneNetObj.Replace("Not ", "").Trim());
-                            if (OneNetObj.Contains("Not "))
-                                for (int b = 0; b < tmp.Count; b++)
-                                    tmp[b][0] = "Not " + tmp[b][0];
-                            if (stopped)
-                            {
-                                OnMyEvent();
-                                WB.Close(false);
-                                ObjExcel.Quit();
-                                return;
-                            }
-                            CurrentDestNetObjResolved.AddRange(tmp);
+                            ResolvedNetObj TmpRNO = new ResolvedNetObj(s, OneNetObj.Contains("Not "));
+                            CurrentDst.Add(TmpRNO);
+
                             progressBar2.Value++;
                             System.Windows.Forms.Application.DoEvents();
                         }
+
 
                         label1.Text = "Отрезолвил Объекты назначения для " + i.ToString() + " правила";
                         alphaBlendTextBox2.AppendText(label1.Text + Environment.NewLine);
@@ -564,9 +571,16 @@ namespace WindowsFormsApplication1
                         {
                             if (stopped)
                             {
-                                OnMyEvent();
+                                OnMyEvent();                                
+                                Marshal.ReleaseComObject(WS);
+                                WS = null;
+                                Marshal.ReleaseComObject(WB);
                                 WB.Close(false);
+                                WB = null;
+                                Marshal.ReleaseComObject(ObjExcel);
                                 ObjExcel.Quit();
+                                ObjExcel = null;
+                                
                                 return;
                             }
 
@@ -579,8 +593,10 @@ namespace WindowsFormsApplication1
                             if (a == 2)
                             {
                                 string ThisCell = "";
-                                foreach (List<string> NetTableRow in CurrentSourceNetObjResolved)
-                                    ThisCell += NetTableRow[0] + " (" + NetTableRow[1] + NetTableRow[2] + ")\n";
+
+                                foreach (ResolvedNetObj SingleNetObj in CurrentSrc)
+                                    foreach (List<string> OneElement in SingleNetObj.ResolvedObj)
+                                        ThisCell += OneElement[0] + " (" + OneElement[1] + OneElement[2] + ")" + Environment.NewLine;
                                 WS.Cells[i, 2].Value = row[a].Replace("\r\n", "\n").Replace("\n\n", "\n").Replace("\r\n", "\n").Replace("\n\n", "\n").Trim();
                                 WS.Cells[i, 3].Value = ThisCell.Trim();
                                 continue;
@@ -590,9 +606,11 @@ namespace WindowsFormsApplication1
                             if (a == 3)
                             {
                                 string ThisCell = "";
-                                foreach (List<string> NetTableRow in CurrentDestNetObjResolved)
-                                    ThisCell += NetTableRow[0] + " (" + NetTableRow[1] + NetTableRow[2] + ")\n";
-                                WS.Cells[i, 4].Value = row[a].Replace("\r\n", "\n").Replace("\n\n", "\n").Replace("\r\n", "\n").Replace("\n\n", "\n");
+
+                                foreach (ResolvedNetObj SingleNetObj in CurrentDst)
+                                    foreach (List<string> OneElement in SingleNetObj.ResolvedObj)
+                                        ThisCell += OneElement[0] + " (" + OneElement[1] + OneElement[2] + ")" + Environment.NewLine;
+                                WS.Cells[i, 4].Value = row[a].Replace("\r\n", "\n").Replace("\n\n", "\n").Replace("\r\n", "\n").Replace("\n\n", "\n").Trim();
                                 WS.Cells[i, 5].Value = ThisCell.Trim();
                                 continue;
                             }
