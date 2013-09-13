@@ -1,0 +1,39 @@
+C:\Users\amrodchenko\Downloads\PolicyConverter-master\WindowsFormsApplication1\bin\Debug\PolycyConverter.exe.config
+C:\Users\amrodchenko\Downloads\PolicyConverter-master\WindowsFormsApplication1\bin\Debug\Properties\Resources.resx
+C:\Users\amrodchenko\Downloads\PolicyConverter-master\WindowsFormsApplication1\bin\Debug\Properties\Resources.Designer.cs
+C:\Users\amrodchenko\Downloads\PolicyConverter-master\WindowsFormsApplication1\bin\Debug\PolycyConverter.exe.manifest
+C:\Users\amrodchenko\Downloads\PolicyConverter-master\WindowsFormsApplication1\bin\Debug\PolycyConverter.application
+C:\Users\amrodchenko\Downloads\PolicyConverter-master\WindowsFormsApplication1\bin\Debug\PolycyConverter.exe
+C:\Users\amrodchenko\Downloads\PolicyConverter-master\WindowsFormsApplication1\bin\Debug\PolycyConverter.pdb
+C:\Users\amrodchenko\Downloads\PolicyConverter-master\WindowsFormsApplication1\bin\Debug\AlphaBlendTextBox.dll
+C:\Users\amrodchenko\Downloads\PolicyConverter-master\WindowsFormsApplication1\bin\Debug\HtmlAgilityPack.dll
+C:\Users\amrodchenko\Downloads\PolicyConverter-master\WindowsFormsApplication1\bin\Debug\HtmlAgilityPack.xml
+C:\Users\amrodchenko\Downloads\PolicyConverter-master\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\amrodchenko\Downloads\PolicyConverter-master\WindowsFormsApplication1\obj\Debug\PolycyConverter.Form2.resources
+C:\Users\amrodchenko\Downloads\PolicyConverter-master\WindowsFormsApplication1\obj\Debug\PolycyConverter.Properties.Resources.resources
+C:\Users\amrodchenko\Downloads\PolicyConverter-master\WindowsFormsApplication1\obj\Debug\PolycyConverter.Form3.resources
+C:\Users\amrodchenko\Downloads\PolicyConverter-master\WindowsFormsApplication1\obj\Debug\PolicyConverter.csproj.GenerateResource.Cache
+C:\Users\amrodchenko\Downloads\PolicyConverter-master\WindowsFormsApplication1\obj\Debug\PolycyConverter.exe.manifest
+C:\Users\amrodchenko\Downloads\PolicyConverter-master\WindowsFormsApplication1\obj\Debug\PolycyConverter.application
+C:\Users\amrodchenko\Downloads\PolicyConverter-master\WindowsFormsApplication1\obj\Debug\PolycyConverter.exe
+C:\Users\amrodchenko\Downloads\PolicyConverter-master\WindowsFormsApplication1\obj\Debug\PolycyConverter.pdb
+C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\bin\Debug\PolycyConverter.exe.config
+C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\obj\Debug\PolycyConverter.exe
+C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\obj\Debug\PolycyConverter.pdb
+C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\bin\Debug\Properties\Resources.resx
+C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\bin\Debug\Properties\Resources.Designer.cs
+C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\bin\Debug\PolycyConverter.exe.manifest
+C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\bin\Debug\PolycyConverter.application
+C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\bin\Debug\PolycyConverter.exe
+C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\bin\Debug\PolycyConverter.pdb
+C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\bin\Debug\AlphaBlendTextBox.dll
+C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\bin\Debug\HtmlAgilityPack.dll
+C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\bin\Debug\HtmlAgilityPack.xml
+C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\obj\Debug\PolycyConverter.Form2.resources
+C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\obj\Debug\PolycyConverter.Properties.Resources.resources
+C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\obj\Debug\PolycyConverter.Form3.resources
+C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\obj\Debug\PolicyConverter.csproj.GenerateResource.Cache
+C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\obj\Debug\PolycyConverter.exe.manifest
+C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\obj\Debug\PolycyConverter.application
