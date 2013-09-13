@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using Microsoft.Office.Interop.Excel;
 using System.Threading;
 using System.Timers;
+using System.Runtime.InteropServices;
 
 namespace WindowsFormsApplication1
 {
@@ -671,6 +672,15 @@ namespace WindowsFormsApplication1
                     Services.Clear();
                     GC.Collect();
                     button1.Enabled = true;
+
+                    
+                    //WB.Close(false, Type.Missing, Type.Missing);
+                    Marshal.ReleaseComObject(WS);
+                    WS = null;
+                    Marshal.ReleaseComObject(WB);
+                    WB = null;
+                    Marshal.ReleaseComObject(ObjExcel);
+                    ObjExcel = null;
                     //t.Start();
                     
                     //WB.Close(true, openFileDialog1.FileName.Replace(".html", ".xlsx"));

@@ -13,23 +13,26 @@ namespace PolycyConverter
     {
         public Form3()
         {
+
             InitializeComponent();
+
+            if (WindowsFormsApplication1.Form1.CurrentErrorObjResolved.Count != 0)
+            {
+                foreach (List<string> OneErrorObj in WindowsFormsApplication1.Form1.CurrentErrorObjResolved)
+                {
+                    this.richTextBox1.AppendText(OneErrorObj[0] + Environment.NewLine);
+                }
+            }
+            else
+            {
+                richTextBox1.Visible = false;
+                label1.Visible = false;
+                this.ClientSize = new System.Drawing.Size(310, 398);
+            }
         }
 
         private void Form3_MouseClick(object sender, MouseEventArgs e)
         {
-            /*if (WindowsFormsApplication1.Form1.tbad.ThreadState == System.Threading.ThreadState.Aborted ||
-                WindowsFormsApplication1.Form1.tbad.ThreadState == System.Threading.ThreadState.Stopped ||
-                WindowsFormsApplication1.Form1.tbad.ThreadState == System.Threading.ThreadState.StopRequested)
-                return;
-            try
-            {
-                WindowsFormsApplication1.Form1.tbad.Abort();
-            }
-            catch
-            {
-                return;
-            }*/
             try
             {
                 Form3.ActiveForm.Close();
