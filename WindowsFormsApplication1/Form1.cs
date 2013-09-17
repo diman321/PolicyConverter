@@ -42,6 +42,7 @@ namespace WindowsFormsApplication1
 
         public static List<List<string>> CurrentErrorObjResolved = new List<List<string>>();
 
+        public static List<string> AllWSNames = new List<string>();
 
         public static List<List<string>> Rules = new List<List<string>>();
         public static List<List<IEnumerable<string>>> NetworkObj = new List<List<IEnumerable<string>>>();
@@ -595,10 +596,41 @@ namespace WindowsFormsApplication1
                                 string ThisCell = "";
 
                                 foreach (ResolvedNetObj SingleNetObj in CurrentSrc)
-                                    foreach (List<string> OneElement in SingleNetObj.ResolvedObj)
-                                        ThisCell += OneElement[0] + " (" + OneElement[1] + OneElement[2] + ")" + Environment.NewLine;
-                                WS.Cells[i, 2].Value = row[a].Replace("\r\n", "\n").Replace("\n\n", "\n").Replace("\r\n", "\n").Replace("\n\n", "\n").Trim();
-                                WS.Cells[i, 3].Value = ThisCell.Trim();
+                                {
+                                    if (checkBox1.Checked == true && SingleNetObj.ResolvedObj.Count > 15)
+                                    {
+                                        if (AllWSNames.Where(n => n.Contains(SingleNetObj.NetObjName)).ToList().Count == 0)
+                                        {
+                                            Worksheet tmpWS = (Worksheet)WB.Worksheets.Add();
+                                            tmpWS.Name = SingleNetObj.NetObjName;                                            
+                                            for (int j = 1 ; j <= SingleNetObj.ResolvedObj.Count ; j++ )
+                                            {
+                                                tmpWS.Cells[j, 1].Value = SingleNetObj.ResolvedObj[j-1][0];
+                                                tmpWS.Cells[j, 2].Value = SingleNetObj.ResolvedObj[j-1][1];
+                                                tmpWS.Cells[j, 3].Value = SingleNetObj.ResolvedObj[j-1][2];
+                                            }
+                                            WS.Cells[i, 2].Value = row[a].Replace("\r\n", "\n").Replace("\n\n", "\n").Replace("\r\n", "\n").Replace("\n\n", "\n").Trim();
+                                            WS.Cells[i, 3].Value = row[a].Replace("\r\n", "\n").Replace("\n\n", "\n").Replace("\r\n", "\n").Replace("\n\n", "\n").Trim();
+                                            AllWSNames.Add(SingleNetObj.NetObjName);
+                                            tmpWS.Columns.AutoFit();
+                                        }
+                                        else
+                                        {
+                                            WS.Cells[i, 2].Value = row[a].Replace("\r\n", "\n").Replace("\n\n", "\n").Replace("\r\n", "\n").Replace("\n\n", "\n").Trim();
+                                            WS.Cells[i, 3].Value = row[a].Replace("\r\n", "\n").Replace("\n\n", "\n").Replace("\r\n", "\n").Replace("\n\n", "\n").Trim();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        foreach (List<string> OneElement in SingleNetObj.ResolvedObj)       
+                                            ThisCell += OneElement[0] + " (" + OneElement[1] + OneElement[2] + ")" + Environment.NewLine;
+                                        WS.Cells[i, 2].Value = row[a].Replace("\r\n", "\n").Replace("\n\n", "\n").Replace("\r\n", "\n").Replace("\n\n", "\n").Trim();
+                                        WS.Cells[i, 3].Value = ThisCell.Trim();
+                                       
+                                    }
+                                }
+
+
                                 continue;
 
                             }
@@ -608,10 +640,41 @@ namespace WindowsFormsApplication1
                                 string ThisCell = "";
 
                                 foreach (ResolvedNetObj SingleNetObj in CurrentDst)
-                                    foreach (List<string> OneElement in SingleNetObj.ResolvedObj)
-                                        ThisCell += OneElement[0] + " (" + OneElement[1] + OneElement[2] + ")" + Environment.NewLine;
-                                WS.Cells[i, 4].Value = row[a].Replace("\r\n", "\n").Replace("\n\n", "\n").Replace("\r\n", "\n").Replace("\n\n", "\n").Trim();
-                                WS.Cells[i, 5].Value = ThisCell.Trim();
+                                {
+                                    if (checkBox1.Checked == true && SingleNetObj.ResolvedObj.Count > 15)
+                                    {
+                                        if (AllWSNames.Where(n => n.Contains(SingleNetObj.NetObjName)).ToList().Count == 0)
+                                        {
+                                            Worksheet tmpWS = (Worksheet)WB.Worksheets.Add();
+                                            tmpWS.Name = SingleNetObj.NetObjName;
+                                            for (int j = 1; j <= SingleNetObj.ResolvedObj.Count; j++)
+                                            {
+                                                tmpWS.Cells[j, 1].Value = SingleNetObj.ResolvedObj[j - 1][0];
+                                                tmpWS.Cells[j, 2].Value = SingleNetObj.ResolvedObj[j - 1][1];
+                                                tmpWS.Cells[j, 3].Value = SingleNetObj.ResolvedObj[j - 1][2];
+                                            }
+                                            WS.Cells[i, 4].Value = row[a].Replace("\r\n", "\n").Replace("\n\n", "\n").Replace("\r\n", "\n").Replace("\n\n", "\n").Trim();
+                                            WS.Cells[i, 5].Value = row[a].Replace("\r\n", "\n").Replace("\n\n", "\n").Replace("\r\n", "\n").Replace("\n\n", "\n").Trim();
+                                            AllWSNames.Add(SingleNetObj.NetObjName);
+                                            tmpWS.Columns.AutoFit();
+                                        }
+                                        else
+                                        {
+                                            WS.Cells[i, 4].Value = row[a].Replace("\r\n", "\n").Replace("\n\n", "\n").Replace("\r\n", "\n").Replace("\n\n", "\n").Trim();
+                                            WS.Cells[i, 5].Value = row[a].Replace("\r\n", "\n").Replace("\n\n", "\n").Replace("\r\n", "\n").Replace("\n\n", "\n").Trim();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        foreach (List<string> OneElement in SingleNetObj.ResolvedObj)
+                                            ThisCell += OneElement[0] + " (" + OneElement[1] + OneElement[2] + ")" + Environment.NewLine;
+                                        WS.Cells[i, 4].Value = row[a].Replace("\r\n", "\n").Replace("\n\n", "\n").Replace("\r\n", "\n").Replace("\n\n", "\n").Trim();
+                                        WS.Cells[i, 5].Value = ThisCell.Trim();
+                                        WS.Columns.AutoFit();
+                                    }
+                                }
+
+
                                 continue;
                             }
 
