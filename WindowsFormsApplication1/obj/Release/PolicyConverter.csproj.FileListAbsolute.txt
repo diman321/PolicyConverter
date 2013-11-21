@@ -29,6 +29,7 @@ C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\Windo
 C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\bin\Release\HtmlAgilityPack.dll
 C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\bin\Release\HtmlAgilityPack.pdb
 C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\bin\Release\HtmlAgilityPack.xml
+C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\obj\Release\PolicyConverter.csprojResolveAssemblyReference.cache
 C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.Form1.resources
 C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\obj\Release\PolycyConverter.Form2.resources
 C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\obj\Release\PolycyConverter.Properties.Resources.resources
@@ -38,4 +39,3 @@ C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\Windo
 C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\obj\Release\PolycyConverter.application
 C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\obj\Release\PolycyConverter.exe
 C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\obj\Release\PolycyConverter.pdb
-C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\obj\Release\PolicyConverter.csprojResolveAssemblyReference.cache

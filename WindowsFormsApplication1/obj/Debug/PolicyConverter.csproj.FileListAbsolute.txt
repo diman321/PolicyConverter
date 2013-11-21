@@ -17,11 +17,9 @@ C:\Users\amrodchenko\Downloads\PolicyConverter-master\WindowsFormsApplication1\o
 C:\Users\amrodchenko\Downloads\PolicyConverter-master\WindowsFormsApplication1\obj\Debug\PolycyConverter.application
 C:\Users\amrodchenko\Downloads\PolicyConverter-master\WindowsFormsApplication1\obj\Debug\PolycyConverter.exe
 C:\Users\amrodchenko\Downloads\PolicyConverter-master\WindowsFormsApplication1\obj\Debug\PolycyConverter.pdb
-C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\bin\Debug\PolycyConverter.exe.config
-C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\obj\Debug\PolycyConverter.exe
-C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\obj\Debug\PolycyConverter.pdb
 C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\bin\Debug\Properties\Resources.resx
 C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\bin\Debug\Properties\Resources.Designer.cs
+C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\bin\Debug\PolycyConverter.exe.config
 C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\bin\Debug\PolycyConverter.exe.manifest
 C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\bin\Debug\PolycyConverter.application
 C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\bin\Debug\PolycyConverter.exe
@@ -37,4 +35,5 @@ C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\Windo
 C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\obj\Debug\PolicyConverter.csproj.GenerateResource.Cache
 C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\obj\Debug\PolycyConverter.exe.manifest
 C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\obj\Debug\PolycyConverter.application
-C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\obj\Debug\PolicyConverter.csprojResolveAssemblyReference.cache
+C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\obj\Debug\PolycyConverter.exe
+C:\Users\amrodchenko\Documents\Visual Studio 2012\Projects\PolicyConverter\WindowsFormsApplication1\obj\Debug\PolycyConverter.pdb

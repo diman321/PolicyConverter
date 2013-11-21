@@ -597,7 +597,7 @@ namespace WindowsFormsApplication1
 
                                 foreach (ResolvedNetObj SingleNetObj in CurrentSrc)
                                 {
-                                    if (checkBox1.Checked == true && SingleNetObj.ResolvedObj.Count > 15)
+                                    if (checkBox1.Checked == true && SingleNetObj.ResolvedObj.Count > 2)
                                     {
                                         if (AllWSNames.Where(n => n.Contains(SingleNetObj.NetObjName)).ToList().Count == 0)
                                         {
@@ -641,12 +641,13 @@ namespace WindowsFormsApplication1
 
                                 foreach (ResolvedNetObj SingleNetObj in CurrentDst)
                                 {
-                                    if (checkBox1.Checked == true && SingleNetObj.ResolvedObj.Count > 15)
+                                    if (checkBox1.Checked == true && SingleNetObj.ResolvedObj.Count > 2)
                                     {
                                         if (AllWSNames.Where(n => n.Contains(SingleNetObj.NetObjName)).ToList().Count == 0)
                                         {
                                             Worksheet tmpWS = (Worksheet)WB.Worksheets.Add();
                                             tmpWS.Name = SingleNetObj.NetObjName;
+                                            tmpWS.Tab.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Red);
                                             for (int j = 1; j <= SingleNetObj.ResolvedObj.Count; j++)
                                             {
                                                 tmpWS.Cells[j, 1].Value = SingleNetObj.ResolvedObj[j - 1][0];
@@ -754,6 +755,7 @@ namespace WindowsFormsApplication1
                     GC.Collect();
                     button1.Enabled = true;
 
+                    WS.Tab.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Green);
                     
                     //WB.Close(false, Type.Missing, Type.Missing);
                     Marshal.ReleaseComObject(WS);
