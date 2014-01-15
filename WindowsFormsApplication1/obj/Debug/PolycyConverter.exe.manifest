@@ -24,7 +24,7 @@
 
         Если вы хотите использовать виртуализацию файлов и реестра для обратной
              совместимости, удалите узел requestedExecutionLevel.
- -->
+    -->
         <requestedExecutionLevel level="asInvoker" uiAccess="false" />
       </requestedPrivileges>
     </security>
@@ -73,7 +73,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>4KZZ4/S314AeEAEqF0dTcq/rFh8=</dsig:DigestValue>
+        <dsig:DigestValue>tof9em0cRtdHcSebASYme72mQtk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -383,6 +383,8 @@ namespace WindowsFormsApplication1
                             .Where(tr => tr.Elements("td").Count() > 1)
                             .Select(tr => tr.Elements("td").Select(td => td.InnerText.Trim()).ToList())
                             .ToList();
+                Rules.RemoveRange(98,7);
+                Rules.RemoveRange(0,70);
 
                 if (stopped) 
                 {
@@ -597,7 +599,7 @@ namespace WindowsFormsApplication1
 
                                 foreach (ResolvedNetObj SingleNetObj in CurrentSrc)
                                 {
-                                    if (checkBox1.Checked == true && SingleNetObj.ResolvedObj.Count > 2)
+                                    if (checkBox1.Checked == true && SingleNetObj.ResolvedObj.Count > 10)
                                     {
                                         if (AllWSNames.Where(n => n.Contains(SingleNetObj.NetObjName)).ToList().Count == 0)
                                         {
@@ -641,7 +643,7 @@ namespace WindowsFormsApplication1
 
                                 foreach (ResolvedNetObj SingleNetObj in CurrentDst)
                                 {
-                                    if (checkBox1.Checked == true && SingleNetObj.ResolvedObj.Count > 2)
+                                    if (checkBox1.Checked == true && SingleNetObj.ResolvedObj.Count > 10)
                                     {
                                         if (AllWSNames.Where(n => n.Contains(SingleNetObj.NetObjName)).ToList().Count == 0)
                                         {
