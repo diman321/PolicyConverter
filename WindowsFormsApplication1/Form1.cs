@@ -1,10 +1,8 @@
-﻿using HtmlAgilityPack;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using Microsoft.Office.Interop.Excel;
-using System.Threading;
 using System.Timers;
 using System.Runtime.InteropServices;
 
@@ -16,6 +14,10 @@ namespace WindowsFormsApplication1
         public Form1()
         {
             InitializeComponent();
+
+            aTimer = new System.Timers.Timer(100);
+            aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
+            aTimer.Enabled = true;
         }
 
         public struct ResolvedNetObj
@@ -23,12 +25,14 @@ namespace WindowsFormsApplication1
             public string NetObjName;
             public List<List<string>> ResolvedObj;
             private bool IsObjectNegated;
+            public string FDQN;
 
             public ResolvedNetObj(string p)
             {
                 NetObjName = p;
                 ResolvedObj = ResolveNetObj(p);
                 IsObjectNegated = false;
+                FDQN = "";
             }
 
             public ResolvedNetObj(string p, bool n)
@@ -36,6 +40,7 @@ namespace WindowsFormsApplication1
                 NetObjName = p;
                 ResolvedObj = ResolveNetObj(p);
                 IsObjectNegated = n;
+                FDQN = "";
             }
 
         }
@@ -47,8 +52,8 @@ namespace WindowsFormsApplication1
         public static List<List<string>> Rules = new List<List<string>>();
         public static List<List<IEnumerable<string>>> NetworkObj = new List<List<IEnumerable<string>>>();
         public static List<List<string>> Services = new List<List<string>>();
-        private static System.Timers.Timer aTimer;
-        public bool stopped = false;
+        public static List<ResolvedNetObj> ToNodeList = new List<ResolvedNetObj>();
+        public static System.Timers.Timer aTimer;
         
         public static string returnNet(string netInPointDelimeter)
         {
@@ -191,7 +196,6 @@ namespace WindowsFormsApplication1
                         break;
                     case "Unknown Type":
                         result.Add(new List<string> { GetRowWithResolvedInfo[0].ToList()[0], GetRowWithResolvedInfo[2].ToList()[0].Split(split, StringSplitOptions.RemoveEmptyEntries)[0].ToString(), "" });
-                        //result.Add(new List<string> { GetRowWithResolvedInfo[0].ToList()[0], GetRowWithResolvedInfo[0].ToList()[0], "" });
                         break;
                     case "Check Point Host":
                         result.Add(new List<string> { GetRowWithResolvedInfo[0].ToList()[0], GetRowWithResolvedInfo[2].ToList()[0], "" });
@@ -200,7 +204,8 @@ namespace WindowsFormsApplication1
                         string tmp3 = GetRowWithResolvedInfo[2].ToList()[0].Split(split, StringSplitOptions.RemoveEmptyEntries)[0].ToString();
                         result.Add(new List<string> { GetRowWithResolvedInfo[0].ToList()[0], tmp3, "" });
                         break;
-                    case "Group":                        foreach (string OneOfGroupNetObj in GetRowWithResolvedInfo[6].Distinct())
+                    case "Group":
+                        foreach (string OneOfGroupNetObj in GetRowWithResolvedInfo[6].Distinct())
                         {
                             if (OneOfGroupNetObj == "")
                                 continue;
@@ -242,16 +247,14 @@ namespace WindowsFormsApplication1
                 errorMessage = String.Concat(errorMessage, resExc.Message);
                 errorMessage = String.Concat(errorMessage, " Line: ");
                 errorMessage = String.Concat(errorMessage, resExc.Source);
-                //MessageBox.Show(errorMessage, "Error");
-                result.Add(new List<string> { NetObj + " Не найден", resExc.Message, resExc.Source });
-                CurrentErrorObjResolved.Add(new List<string> { NetObj + " Не найден", resExc.Message, resExc.Source });
-            }
-            
+                result.Add(new List<string> { NetObj + " Не найден", "", "" });
+                CurrentErrorObjResolved.Add(new List<string> { NetObj + " Не найден", "", "" });
+            }            
             return result;
 
         }
 
-        public static List<List<string>> ResolvePorts(string NetObj)
+        public  List<List<string>> ResolvePorts(string NetObj)
         {
             List<List<string>> result = new List<List<string>>();
             string[] split = { "\r\n", "\r", "\n" };
@@ -313,138 +316,78 @@ namespace WindowsFormsApplication1
                 errorMessage = String.Concat(errorMessage, resExc.Message);
                 errorMessage = String.Concat(errorMessage, " Line: ");
                 errorMessage = String.Concat(errorMessage, resExc.Source);
-                //MessageBox.Show(errorMessage, "Error");
                 result.Add(new List<string> { "Exception Error", resExc.Message, resExc.Source });
-
             }
-
             return result;
-
-        }
-
-        public void BorderAround(Microsoft.Office.Interop.Excel.Range range, int colour)
-        {
-            Microsoft.Office.Interop.Excel.Borders borders = range.Borders;
-            borders[Microsoft.Office.Interop.Excel.XlBordersIndex.xlEdgeLeft].LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous;
-            borders[Microsoft.Office.Interop.Excel.XlBordersIndex.xlEdgeTop].LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous;
-            borders[Microsoft.Office.Interop.Excel.XlBordersIndex.xlEdgeBottom].LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous;
-            borders[Microsoft.Office.Interop.Excel.XlBordersIndex.xlEdgeRight].LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous;
-            borders.Color = colour;
-            borders[Microsoft.Office.Interop.Excel.XlBordersIndex.xlInsideVertical].LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlLineStyleNone;
-            borders[Microsoft.Office.Interop.Excel.XlBordersIndex.xlInsideHorizontal].LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlLineStyleNone;
-            borders[Microsoft.Office.Interop.Excel.XlBordersIndex.xlDiagonalUp].LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlLineStyleNone;
-            borders[Microsoft.Office.Interop.Excel.XlBordersIndex.xlDiagonalDown].LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlLineStyleNone;
-            borders = null;
-        }
-
-        public virtual void OnMyEvent()
-        {
-            Rules.Clear();
-            NetworkObj.Clear();
-            Services.Clear();
-            GC.Collect();
-            label1.Text = "Останавился и очистил память";
-            alphaBlendTextBox2.AppendText(label1.Text + Environment.NewLine);
-            button1.Enabled = true;
-            PolycyConverter.Form2 form2 = new PolycyConverter.Form2();
-            form2.ShowDialog(this);
-            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            stopped = false;
             button1.Enabled = false;
-            
-            aTimer = new System.Timers.Timer(10000);
-
-            // Hook up the Elapsed event for the timer.
-            aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
-
-            aTimer.Interval = 200;
-            aTimer.Enabled = true;
+            numericUpDown1.Enabled = false;
+            numericUpDown2.Enabled = false;
+            checkBox2.Enabled = false;
+            checkBox1.Enabled = false;
 
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                HtmlWeb htmlWeb = new HtmlWeb();
-
-                // Creates an HtmlDocument object from an URL
-                HtmlAgilityPack.HtmlDocument document = htmlWeb.Load(openFileDialog1.FileName);
-
+            { 
                 ///
                 /// Копирую таблицы со структурой
                 /// Правила - двумерная структура
                 /// Сетевые объекты - трёхмерная (двумерная таблица с объектом-списком)
                 /// Сервисы - двумерная таблица
                 ///
-                Rules = document.DocumentNode.SelectSingleNode("/html[1]/body[1]/table[2]")
-                            .Descendants("tr")
-                            .Skip(1)
-                            .Where(tr => tr.Elements("td").Count() > 1)
-                            .Select(tr => tr.Elements("td").Select(td => td.InnerText.Trim()).ToList())
-                            .ToList();
-                Rules.RemoveRange(98,7);
-                Rules.RemoveRange(0,70);
 
-                if (stopped) 
+                Rulesd_Delegate d = null;
+                d = new Rulesd_Delegate(Rulesd);
+                IAsyncResult R = null;
+                R = d.BeginInvoke(openFileDialog1.FileName, null, null);                
+                Rules = d.EndInvoke(R);
+
+                /*
+                 * Это N правил + 1 отрезаем кончающие правила 
+                 * Далее начальные
+                 */
+
+                if (checkBox2.Checked &&
+                    numericUpDown1.Value < numericUpDown2.Value &&
+                    numericUpDown2.Value < Rules.Count)
                 {
-                    OnMyEvent();
-                    return;
+                    Rules.RemoveRange(Convert.ToInt32(numericUpDown2.Value) + 1, Rules.Count - Convert.ToInt32(numericUpDown2.Value) - 1);
+                    Rules.RemoveRange(0, Convert.ToInt32(numericUpDown1.Value));
                 }
+                else
+                    if (checkBox2.Checked)
+                    {
+                        MessageBox.Show("Проверьте правильно ли Вы выставили значения диапазона интересующих правил");
+                        return;
+                    }
 
-                label1.Text = "Скопировал Таблицу правил";
-                alphaBlendTextBox2.AppendText(label1.Text + Environment.NewLine);
-                System.Windows.Forms.Application.DoEvents();
+                AddTextToStatus("Скопировал Таблицу правил");
 
-                NetworkObj = document.DocumentNode.SelectSingleNode("/html[1]/body[1]/table[4]")
-                            .Descendants("tr")
-                            .Skip(1)
-                            .Where(tr => tr.Elements("td").Count() > 1)
-                            .Select(tr => tr.Elements("td").Distinct()
-                            .Select(td => td.Descendants().Distinct()
-                            .Where(br => br.InnerText != "").Distinct()
-                            .Select(br => br.InnerText.Trim())).Distinct().ToList().Distinct().ToList()).Distinct()
-                            .ToList();
+                NetworkObjd_Delegate ND = null;
+                ND = new NetworkObjd_Delegate(NetworkObjd);
+                IAsyncResult NR = null;
+                NR = ND.BeginInvoke(openFileDialog1.FileName, null, null);
+                NetworkObj = ND.EndInvoke(NR);
 
-                if (stopped)
-                {
-                    OnMyEvent();
-                    return;
-                }
-
-                label1.Text = "Скопировал Таблицу Сетевых имён";
-                alphaBlendTextBox2.AppendText(label1.Text + Environment.NewLine);
-                System.Windows.Forms.Application.DoEvents();
+                AddTextToStatus("Скопировал Таблицу Сетевых имён");                
 
                 for (int k = 0; k < NetworkObj.Count; k++)
                 {
                     for (int l = 0; l < NetworkObj[l].Count; l++)
                     {
                         NetworkObj[k][l] = NetworkObj[k][l].Distinct();
-                        if (stopped)
-                        {
-                            OnMyEvent();
-                            return;
-                        }
                     }
                 }
-                
-                Services = document.DocumentNode.SelectSingleNode("/html[1]/body[1]/table[6]")
-                          .Descendants("tr")
-                          .Skip(1)
-                          .Where(tr => tr.Elements("td").Count() > 1)
-                          .Select(tr => tr.Elements("td").Select(td => td.InnerText.Trim()).ToList())
-                          .ToList();
 
-                if (stopped)
-                {
-                    OnMyEvent();
-                    return;
-                }
+                Servicesd_Delegate SD = null;
+                SD = new Servicesd_Delegate(Servicesd);
+                IAsyncResult SR = null;
+                SR = SD.BeginInvoke(openFileDialog1.FileName, null, null);
+                Services = SD.EndInvoke(SR);
 
-                label1.Text = "Скопировал Таблицу сервисов";
-                alphaBlendTextBox2.AppendText(label1.Text + Environment.NewLine);
-                System.Windows.Forms.Application.DoEvents();
+                AddTextToStatus("Скопировал Таблицу сервисов");
 
                 ///
                 /// Открываем книгу Excel. 
@@ -456,9 +399,7 @@ namespace WindowsFormsApplication1
                 WS = (Worksheet)WB.Sheets[1];
                 int i = 1;
 
-                label1.Text = "Открыл ExCel";
-                alphaBlendTextBox2.AppendText(label1.Text + Environment.NewLine);
-                System.Windows.Forms.Application.DoEvents();
+                AddTextToStatus("Открыл ExCel");
 
                 progressBar1.Maximum = Rules.Count;
                 progressBar1.Value = 0;
@@ -467,7 +408,7 @@ namespace WindowsFormsApplication1
                 {
                     foreach (List<string> row in Rules)
                     {
-                        if (row[2] == "SOURCE")
+                        if (i == 1)
                         {
                             WS.Cells[i, 1].Value = "Сервис";
                             WS.Cells[i, 2].Value = "Сегмент источника";
@@ -475,7 +416,10 @@ namespace WindowsFormsApplication1
                             WS.Cells[i, 4].Value = "Сегмент назначения";
                             WS.Cells[i, 5].Value = "IP назначения";
                             WS.Cells[i, 6].Value = "Порты";
-                            WS.Cells[i, 7].Value = "Описание";
+                            WS.Cells[i, 7].Value = "Решение";
+                            WS.Cells[i, 8].Value = "Установлено";
+                            WS.Cells[i, 9].Value = "Время";
+                            WS.Cells[i, 10].Value = "Комментарий";
                             i++;
                             continue;
                         }
@@ -491,51 +435,47 @@ namespace WindowsFormsApplication1
                         ///
                         
                         List<string> CurrentSourceNetObj = row[2].Split(split, StringSplitOptions.RemoveEmptyEntries).ToList();
-                        
-                        progressBar2.Maximum = CurrentSourceNetObj.Count;
-                        progressBar2.Value = 0;
+                        List<ResolvedNetObj> CurrentSrc = GetResolvedNetObj(CurrentSourceNetObj);
+                        AddTextToStatus("Отрезолвил Объекты Источники для " + i.ToString() + " правила");
 
-                        List<ResolvedNetObj> CurrentSrc = new List<ResolvedNetObj>();
-
-                        foreach (string OneNetObj in CurrentSourceNetObj)
-                        {
-                            string s = OneNetObj.Replace("Not ", "").Trim();
-                            ResolvedNetObj TmpRNO = new ResolvedNetObj(s, OneNetObj.Contains("Not "));
-                            CurrentSrc.Add(TmpRNO);
-
-                            progressBar2.Value++;
-                            System.Windows.Forms.Application.DoEvents();
-                        }
-
-                        label1.Text = "Отрезолвил Объекты источники для " + i.ToString() + " правила";
-                        alphaBlendTextBox2.AppendText(label1.Text + Environment.NewLine);
-                        System.Windows.Forms.Application.DoEvents();
-
+                        foreach (ResolvedNetObj oneNetObj in CurrentSrc)
+                            if (oneNetObj.ResolvedObj.Count > 1)
+                                foreach (List<string> OneResNetObj in oneNetObj.ResolvedObj)
+                                    if (ToNodeList.Where(n => n.NetObjName == OneResNetObj[0]).Count() == 0)
+                                    {
+                                        List<ResolvedNetObj> tmpone = GetResolvedNetObj(new List<string> { OneResNetObj[0] });
+                                        ToNodeList.AddRange(tmpone);
+                                        if (ToNodeList.Where(n => n.NetObjName == oneNetObj.NetObjName).Count() == 0)
+                                            ToNodeList.Add(oneNetObj);
+                                    }
+                                    else
+                                        continue;
+                            else
+                                if (ToNodeList.Where(n => n.NetObjName == oneNetObj.NetObjName).Count() == 0)                                
+                                    ToNodeList.Add(oneNetObj);
+                       
                         ///
                         /// Это для Destination
                         ///
 
                         List<string> CurrentDestNetObj = row[3].Split(split, StringSplitOptions.RemoveEmptyEntries).ToList();
+                        List<ResolvedNetObj> CurrentDst = GetResolvedNetObj(CurrentDestNetObj);
+                        AddTextToStatus("Отрезолвил Объекты Назначения для " + i.ToString() + " правила");
 
-                        progressBar2.Maximum = CurrentDestNetObj.Count;
-                        progressBar2.Value = 0;
-
-                        List<ResolvedNetObj> CurrentDst = new List<ResolvedNetObj>();
-
-                        foreach (string OneNetObj in CurrentDestNetObj)
-                        {
-                            string s = OneNetObj.Replace("Not ", "").Trim();
-                            ResolvedNetObj TmpRNO = new ResolvedNetObj(s, OneNetObj.Contains("Not "));
-                            CurrentDst.Add(TmpRNO);
-
-                            progressBar2.Value++;
-                            System.Windows.Forms.Application.DoEvents();
-                        }
-
-
-                        label1.Text = "Отрезолвил Объекты назначения для " + i.ToString() + " правила";
-                        alphaBlendTextBox2.AppendText(label1.Text + Environment.NewLine);
-                        System.Windows.Forms.Application.DoEvents();
+                        foreach (ResolvedNetObj oneNetObj in CurrentDst)
+                            if (oneNetObj.ResolvedObj.Count > 1)
+                                foreach (List<string> OneResNetObj in oneNetObj.ResolvedObj)
+                                    if (ToNodeList.Where(n => n.NetObjName == OneResNetObj[0]).Count() == 0)
+                                    {
+                                        List<string> one = new List<string> { OneResNetObj[0] };
+                                        List<ResolvedNetObj> tmpone = GetResolvedNetObj(one);
+                                        ToNodeList.AddRange(tmpone);
+                                    }
+                                    else
+                                        continue;
+                            else
+                                if (ToNodeList.Where(n => n.NetObjName == oneNetObj.NetObjName).Count() == 0)
+                                    ToNodeList.Add(oneNetObj);
 
                         ///
                         /// Это для портов
@@ -554,157 +494,80 @@ namespace WindowsFormsApplication1
                             if (OnePortObj.Contains("Not "))
                                 for (int b = 0; b < tmp.Count; b++)
                                     tmp[b][0] = "Not " + tmp[b][0];
-                            if (stopped)
-                            {
-                                OnMyEvent();
-                                WB.Close(false);
-                                ObjExcel.Quit();
-                                return;
-                            }
+
                             CurrentPortObjResolved.AddRange(tmp);
-                            progressBar2.Value++;
+
+                            if (progressBar2.InvokeRequired)
+                                progressBar2.BeginInvoke(new MethodInvoker(() => progressBar2.Value++));
+                            else
+                                progressBar2.Value++;
                             System.Windows.Forms.Application.DoEvents();
                         }
 
-                        label1.Text = "Отрезолвил Объекты порты для " + i.ToString() + " правила";
-                        alphaBlendTextBox2.AppendText(label1.Text + Environment.NewLine);
-                        System.Windows.Forms.Application.DoEvents();
+                        AddTextToStatus("Отрезолвил Объекты порты для " + i.ToString() + " правила");
 
                         for (int a = 0 ; a < row.Count ; a++)
                         {
-                            if (stopped)
-                            {
-                                OnMyEvent();                                
-                                Marshal.ReleaseComObject(WS);
-                                WS = null;
-                                Marshal.ReleaseComObject(WB);
-                                WB.Close(false);
-                                WB = null;
-                                Marshal.ReleaseComObject(ObjExcel);
-                                ObjExcel.Quit();
-                                ObjExcel = null;
-                                
-                                return;
-                            }
-
-                            if (a == 0 || a == 4 || a == 7 || a == 8)
-                                continue ;
-
                             if (a == 1)
                                 WS.Cells[i, 1].Value = row[a];
 
-                            if (a == 2)
-                            {
-                                string ThisCell = "";
+                            if (a == 2)                            
+                                AddNetworkObj(CurrentSrc, WB, WS, i, 2);
+                            
 
-                                foreach (ResolvedNetObj SingleNetObj in CurrentSrc)
-                                {
-                                    if (checkBox1.Checked == true && SingleNetObj.ResolvedObj.Count > 10)
-                                    {
-                                        if (AllWSNames.Where(n => n.Contains(SingleNetObj.NetObjName)).ToList().Count == 0)
-                                        {
-                                            Worksheet tmpWS = (Worksheet)WB.Worksheets.Add();
-                                            tmpWS.Name = SingleNetObj.NetObjName;                                            
-                                            for (int j = 1 ; j <= SingleNetObj.ResolvedObj.Count ; j++ )
-                                            {
-                                                tmpWS.Cells[j, 1].Value = SingleNetObj.ResolvedObj[j-1][0];
-                                                tmpWS.Cells[j, 2].Value = SingleNetObj.ResolvedObj[j-1][1];
-                                                tmpWS.Cells[j, 3].Value = SingleNetObj.ResolvedObj[j-1][2];
-                                            }
-                                            WS.Cells[i, 2].Value = row[a].Replace("\r\n", "\n").Replace("\n\n", "\n").Replace("\r\n", "\n").Replace("\n\n", "\n").Trim();
-                                            WS.Cells[i, 3].Value = row[a].Replace("\r\n", "\n").Replace("\n\n", "\n").Replace("\r\n", "\n").Replace("\n\n", "\n").Trim();
-                                            AllWSNames.Add(SingleNetObj.NetObjName);
-                                            tmpWS.Columns.AutoFit();
-                                        }
-                                        else
-                                        {
-                                            WS.Cells[i, 2].Value = row[a].Replace("\r\n", "\n").Replace("\n\n", "\n").Replace("\r\n", "\n").Replace("\n\n", "\n").Trim();
-                                            WS.Cells[i, 3].Value = row[a].Replace("\r\n", "\n").Replace("\n\n", "\n").Replace("\r\n", "\n").Replace("\n\n", "\n").Trim();
-                                        }
-                                    }
-                                    else
-                                    {
-                                        foreach (List<string> OneElement in SingleNetObj.ResolvedObj)       
-                                            ThisCell += OneElement[0] + " (" + OneElement[1] + OneElement[2] + ")" + Environment.NewLine;
-                                        WS.Cells[i, 2].Value = row[a].Replace("\r\n", "\n").Replace("\n\n", "\n").Replace("\r\n", "\n").Replace("\n\n", "\n").Trim();
-                                        WS.Cells[i, 3].Value = ThisCell.Trim();
-                                       
-                                    }
-                                }
-
-
-                                continue;
-
-                            }
-
-                            if (a == 3)
-                            {
-                                string ThisCell = "";
-
-                                foreach (ResolvedNetObj SingleNetObj in CurrentDst)
-                                {
-                                    if (checkBox1.Checked == true && SingleNetObj.ResolvedObj.Count > 10)
-                                    {
-                                        if (AllWSNames.Where(n => n.Contains(SingleNetObj.NetObjName)).ToList().Count == 0)
-                                        {
-                                            Worksheet tmpWS = (Worksheet)WB.Worksheets.Add();
-                                            tmpWS.Name = SingleNetObj.NetObjName;
-                                            tmpWS.Tab.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Red);
-                                            for (int j = 1; j <= SingleNetObj.ResolvedObj.Count; j++)
-                                            {
-                                                tmpWS.Cells[j, 1].Value = SingleNetObj.ResolvedObj[j - 1][0];
-                                                tmpWS.Cells[j, 2].Value = SingleNetObj.ResolvedObj[j - 1][1];
-                                                tmpWS.Cells[j, 3].Value = SingleNetObj.ResolvedObj[j - 1][2];
-                                            }
-                                            WS.Cells[i, 4].Value = row[a].Replace("\r\n", "\n").Replace("\n\n", "\n").Replace("\r\n", "\n").Replace("\n\n", "\n").Trim();
-                                            WS.Cells[i, 5].Value = row[a].Replace("\r\n", "\n").Replace("\n\n", "\n").Replace("\r\n", "\n").Replace("\n\n", "\n").Trim();
-                                            AllWSNames.Add(SingleNetObj.NetObjName);
-                                            tmpWS.Columns.AutoFit();
-                                        }
-                                        else
-                                        {
-                                            WS.Cells[i, 4].Value = row[a].Replace("\r\n", "\n").Replace("\n\n", "\n").Replace("\r\n", "\n").Replace("\n\n", "\n").Trim();
-                                            WS.Cells[i, 5].Value = row[a].Replace("\r\n", "\n").Replace("\n\n", "\n").Replace("\r\n", "\n").Replace("\n\n", "\n").Trim();
-                                        }
-                                    }
-                                    else
-                                    {
-                                        foreach (List<string> OneElement in SingleNetObj.ResolvedObj)
-                                            ThisCell += OneElement[0] + " (" + OneElement[1] + OneElement[2] + ")" + Environment.NewLine;
-                                        WS.Cells[i, 4].Value = row[a].Replace("\r\n", "\n").Replace("\n\n", "\n").Replace("\r\n", "\n").Replace("\n\n", "\n").Trim();
-                                        WS.Cells[i, 5].Value = ThisCell.Trim();
-                                        WS.Columns.AutoFit();
-                                    }
-                                }
-
-
-                                continue;
-                            }
-
+                            if (a == 3)                            
+                                AddNetworkObj(CurrentDst, WB, WS, i, 4);
+                            
                             if (a == 5)
                             {
                                 string ThisCell = "";
                                 foreach (List<string> PortTableRow in CurrentPortObjResolved)
-                                    ThisCell += PortTableRow[0] + " (" + PortTableRow[1] +  "/" + PortTableRow[2] + ")\n";
-                                WS.Cells[i, 6].Value = ThisCell.Trim();
+                                    ThisCell += PortTableRow[0] + " (" + PortTableRow[1] +  "/" + PortTableRow[2] + ")" + Environment.NewLine;
+                                WS.Cells[i, 6].Value = ThisCell.Replace("Icmp (Icmp/)", "ICMP")
+                                    .Replace("(ALL_DCE_RPC/DCE-RPC)", "(Все DCE-RPC)")
+                                    .Replace("Any (Any/)", "Any")
+                                    .Replace("l_ALL_DCE_RPC(l_ALL_DCE_RPC / DCE - RPC)", "l_ALL_DCE_RPC (Все DCE-RPC)")
+                                    .Trim();
                             }
 
                             if (a == 6)
                                 WS.Cells[i, 7].Value = row[a];
-                        }
-                        if (i % 2 == 0)
-                        {
-                            Microsoft.Office.Interop.Excel.Range chartRange;
-                            chartRange = WS.get_Range("A" + i.ToString(), "G" + i.ToString());
-                            chartRange.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Gray);
-                        }
-                        i++;
-                        progressBar1.Value++;
-                        progressBar1.Update();
-                        label1.Text = "Записал " + i.ToString() + " правило";
-                        alphaBlendTextBox2.AppendText(label1.Text + Environment.NewLine);
 
-                        System.Windows.Forms.Application.DoEvents();                        
+                            if (a == 8)
+                                WS.Cells[i, 8].Value = row[a].Replace("\r\n", "\n").Replace("\n\r", "\n").Replace("\r\r", "\n").Replace("\n\n", "\n").Trim();
+
+                            if (a == 9)
+                                WS.Cells[i, 9].Value = row[a];
+
+                            if (a == 10)
+                                WS.Cells[i, 10].Value = row[a].Replace("&nbsp;", "").Trim();
+
+                            if (a == 0 || a == 4 || a == 7)
+                                continue;
+                        }
+                        
+                        AddTextToStatus("Записал " + i.ToString() + " правило");       
+                        i++;
+
+                        if (progressBar1.InvokeRequired)
+                            progressBar1.BeginInvoke(new MethodInvoker(() => progressBar1.Value++));
+                        else
+                            progressBar1.Value++;
+                        System.Windows.Forms.Application.DoEvents();                           
+                    }
+
+                    AddTextToStatus("Добавляю лист Node");
+                    AddNodeList(WB);
+
+                    if (CurrentErrorObjResolved.Count != 0)
+                    {
+                        PolycyConverter.Form3 form3 = new PolycyConverter.Form3();
+                        form3.ShowDialog(this);
+                    }
+                    else
+                    {
+                        PolycyConverter.Form2 form2 = new PolycyConverter.Form2();
+                        form2.ShowDialog(this);
                     }
                 }
                 catch (Exception theException)  
@@ -717,59 +580,47 @@ namespace WindowsFormsApplication1
                     
                     MessageBox.Show(errorMessage, "Error");  
 
-                    ObjExcel.Visible = true;
-                    ObjExcel.UserControl = true;
-                    
                     ObjExcel.Columns.AutoFit();
                     ObjExcel.Rows.AutoFit();
-                    //tbad.Start();
-                    
+
                     PolycyConverter.Form3 form3 = new PolycyConverter.Form3();                    
                     form3.ShowDialog(this);
-
                     return;
-                    //ObjExcel.Quit();
-                    //WB.Close(true, openFileDialog1.FileName.Replace(".html", ".xlsx"));
                 } 
                 finally
                 {
-                    if (!stopped)
-                    {
-                        ObjExcel.Columns.AutoFit();
-                        ObjExcel.Rows.AutoFit();
-                        ObjExcel.Visible = true;
-                        ObjExcel.UserControl = true;
+                    WS.Activate();
+                    Microsoft.Office.Interop.Excel.Range c1 = WS.Cells[1, 2];
+                    Microsoft.Office.Interop.Excel.Range c2 = WS.Cells[i+1, 10];
+                    Range oRange = (Microsoft.Office.Interop.Excel.Range)WS.get_Range(c1, c2);
 
-                        if (CurrentErrorObjResolved.Count != 0)
-                        {
-                            PolycyConverter.Form3 form3 = new PolycyConverter.Form3();
-                            form3.ShowDialog(this);
-                        }
-                        else
-                        {
-                            PolycyConverter.Form2 form2 = new PolycyConverter.Form2();
-                            form2.ShowDialog(this);
-                        }
-                    }
+                    oRange.Columns.AutoFit();
+                    oRange.Rows.AutoFit();
+
+                    WS.Application.ActiveWindow.SplitRow = 1;
+                    WS.Application.ActiveWindow.FreezePanes = true;
+
+                    ObjExcel.Visible = true;
+                    ObjExcel.UserControl = true;
+
                     Rules.Clear();
                     NetworkObj.Clear();
                     Services.Clear();
-                    GC.Collect();
-                    button1.Enabled = true;
 
-                    WS.Tab.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Green);
-                    
-                    //WB.Close(false, Type.Missing, Type.Missing);
+                    button1.Enabled = true;
+                    numericUpDown1.Enabled = true;
+                    numericUpDown2.Enabled = true;
+                    checkBox2.Enabled = true;
+                    checkBox1.Enabled = true;
+
                     Marshal.ReleaseComObject(WS);
                     WS = null;
                     Marshal.ReleaseComObject(WB);
                     WB = null;
                     Marshal.ReleaseComObject(ObjExcel);
                     ObjExcel = null;
-                    //t.Start();
-                    
-                    //WB.Close(true, openFileDialog1.FileName.Replace(".html", ".xlsx"));
-                    //ObjExcel.Quit();
+
+                    GC.Collect();
                 }
             }
                 
@@ -780,14 +631,26 @@ namespace WindowsFormsApplication1
             System.Windows.Forms.Application.DoEvents();             
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
-            System.Windows.Forms.Application.DoEvents();
-            stopped = true;
-            label1.Text = "Останавливаюсь";
-            alphaBlendTextBox2.AppendText(label1.Text + Environment.NewLine);
-            System.Windows.Forms.Application.DoEvents();
+            if (checkBox2.Checked)
+            {
+                numericUpDown1.Enabled = true;
+                numericUpDown2.Enabled = true;
+            }
+            else
+            {
+                numericUpDown1.Enabled = false;
+                numericUpDown2.Enabled = false;
+            }
         }
 
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+                numericUpDown3.Enabled = true;
+            else
+                numericUpDown3.Enabled = false;
+        }
     }
 }
