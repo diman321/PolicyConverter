@@ -118,9 +118,8 @@ namespace WindowsFormsApplication1
         
         public void AddNetworkObj(List<ResolvedNetObj> Current, Workbook WB, Worksheet WS, int currentrow, int startplase)
         {
-            string ThisCellResolve = "";
-            string ThisCell = "";
-
+			string ThisCellResolve = "";
+			string ThisCell = "";
             int allobj = 0;
 
             foreach (ResolvedNetObj SingleNetObj in Current)
@@ -128,7 +127,10 @@ namespace WindowsFormsApplication1
 
 
             foreach (ResolvedNetObj SingleNetObj in Current)
-            {
+            {			
+				string Negated = "";
+				if (SingleNetObj.IsObjectNegated)
+					Negated = "Not ";
                 if (checkBox1.Checked == true && (((SingleNetObj.ResolvedObj.Count > Convert.ToInt32(numericUpDown3.Value))) || (allobj > 25 && SingleNetObj.ResolvedObj.Count > 2)))
                 {
                     if (AllWSNames.Where(n => n.Contains(SingleNetObj.NetObjName)).ToList().Count == 0)
@@ -136,21 +138,21 @@ namespace WindowsFormsApplication1
                         AddWStoWB(SingleNetObj, WB);
                         AllWSNames.Add(SingleNetObj.NetObjName);
 
-                        ThisCell += SingleNetObj.NetObjName + Environment.NewLine;
-                        ThisCellResolve += SingleNetObj.NetObjName + Environment.NewLine;
+						ThisCell += Negated + SingleNetObj.NetObjName + Environment.NewLine;
+						ThisCellResolve += Negated + SingleNetObj.NetObjName + Environment.NewLine;
                     }
                     else
                     {
-                        ThisCell += SingleNetObj.NetObjName + Environment.NewLine;
-                        ThisCellResolve += SingleNetObj.NetObjName + Environment.NewLine;
+						ThisCell += Negated + SingleNetObj.NetObjName + Environment.NewLine;
+						ThisCellResolve += Negated + SingleNetObj.NetObjName + Environment.NewLine;
                     }
                 }
                 else
                 {
                     string Tmp4LittleGroupObj = "";
                     foreach (List<string> OneElement in SingleNetObj.ResolvedObj)
-                        Tmp4LittleGroupObj += OneElement[0] + " (" + OneElement[1] + OneElement[2] + ")" + Environment.NewLine;
-                    ThisCell += SingleNetObj.NetObjName + Environment.NewLine;
+						Tmp4LittleGroupObj += Negated + OneElement[0] + " (" + OneElement[1] + OneElement[2] + ")" + Environment.NewLine;
+					ThisCell += Negated + SingleNetObj.NetObjName + Environment.NewLine;
                     ThisCellResolve += Tmp4LittleGroupObj.Trim() + Environment.NewLine;              
                 }
             }
@@ -176,6 +178,7 @@ namespace WindowsFormsApplication1
             {
                 string s = OneNetObj.Replace("Not ", "").Trim();
                 ResolvedNetObj TmpRNO = new ResolvedNetObj(s, OneNetObj.Contains("Not "));
+
                 CurrentResolvedNetObjs.Add(TmpRNO);
 
                 if (progressBar2.InvokeRequired)

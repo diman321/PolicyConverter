@@ -24,7 +24,7 @@ namespace WindowsFormsApplication1
         {   
             public string NetObjName;
             public List<List<string>> ResolvedObj;
-            private bool IsObjectNegated;
+			public bool IsObjectNegated;
             public string FDQN;
 
             public ResolvedNetObj(string p)
