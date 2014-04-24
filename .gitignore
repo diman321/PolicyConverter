@@ -41,7 +41,7 @@ local.properties
 *.sln.docstates
 
 # Build results
-[Bb]in/
+#[Bb]in/
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
@@ -53,7 +53,7 @@ local.properties
 *.meta
 *.obj
 *.pch
-*.pdb
+#*.pdb
 *.pgc
 *.pgd
 *.rsp
