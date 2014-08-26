@@ -470,6 +470,8 @@ namespace WindowsFormsApplication1
                                         List<string> one = new List<string> { OneResNetObj[0] };
                                         List<ResolvedNetObj> tmpone = GetResolvedNetObj(one);
                                         ToNodeList.AddRange(tmpone);
+										if (ToNodeList.Where(n => n.NetObjName == oneNetObj.NetObjName).Count() == 0)
+											ToNodeList.Add(oneNetObj);
                                     }
                                     else
                                         continue;
@@ -558,6 +560,10 @@ namespace WindowsFormsApplication1
 
                     AddTextToStatus("Добавляю лист Node");
                     AddNodeList(WB);
+
+					if (checkBox3.Checked)	
+						AddAllNodeList(WB);
+				
 
                     if (CurrentErrorObjResolved.Count != 0)
                     {
