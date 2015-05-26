@@ -90,7 +90,7 @@ namespace WindowsFormsApplication1
         public List<NetInfo> GetNets()
         {
             MySqlConnection connection = new MySqlConnection("SERVER=10.46.48.180;" +
-                                                 "DATABASE=ipdb;" +
+                                                 "DATABASE=ipdb_sp;" +
                                                  "UID=reader;" +
                                                  "PASSWORD=reader;");
 

@@ -316,7 +316,7 @@ namespace WindowsFormsApplication1
                 errorMessage = String.Concat(errorMessage, resExc.Message);
                 errorMessage = String.Concat(errorMessage, " Line: ");
                 errorMessage = String.Concat(errorMessage, resExc.Source);
-                result.Add(new List<string> { "Exception Error", resExc.Message, resExc.Source });
+				result.Add(new List<string> { NetObj, resExc.Message, "Не найден" });
             }
             return result;
         }
@@ -544,7 +544,16 @@ namespace WindowsFormsApplication1
                             if (a == 10)
                                 WS.Cells[i, 10].Value = row[a].Replace("&nbsp;", "").Trim();
 
-                            if (a == 0 || a == 4 || a == 7)
+							if (row[0].Contains("Disabled"))
+							{
+								Microsoft.Office.Interop.Excel.Range c1 = WS.Cells[i, 1];
+								Microsoft.Office.Interop.Excel.Range c2 = WS.Cells[i, 10];
+								Range oRange = (Microsoft.Office.Interop.Excel.Range)WS.get_Range(c1, c2);
+								oRange.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Red);
+								oRange.Font.Bold = true;
+							}
+
+                            if (a == 4 || a == 7)
                                 continue;
                         }
                         
