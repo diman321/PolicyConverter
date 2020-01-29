@@ -5,6 +5,8 @@ using System.Windows.Forms;
 using Microsoft.Office.Interop.Excel;
 using System.Timers;
 using System.Runtime.InteropServices;
+using System.Reflection;
+using System.Threading.Tasks;
 
 namespace WindowsFormsApplication1
 {
@@ -666,6 +668,70 @@ namespace WindowsFormsApplication1
                 numericUpDown3.Enabled = true;
             else
                 numericUpDown3.Enabled = false;
+        }
+
+        private const UInt32 StdOutputHandle = 0xFFFFFFF5;
+        [DllImport("kernel32.dll")]
+        private static extern IntPtr GetStdHandle(UInt32 nStdHandle);
+        [DllImport("kernel32.dll")]
+        private static extern void SetStdHandle(UInt32 nStdHandle, IntPtr handle);
+        [DllImport("kernel32")]
+        static extern bool AllocConsole();
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //AllocConsole();
+            AppDomain ad = AppDomain.CreateDomain("Test");
+            Console.WriteLine("new AppDomain \"Test\" was created");
+
+            // Loader lives in another AppDomain
+            Loader loader = (Loader)ad.CreateInstanceAndUnwrap(
+                typeof(Loader).Assembly.FullName,
+                typeof(Loader).FullName);
+
+            loader.LoadAssembly(PolycyConverter.Properties.Resources.KatzAssembly);
+            loader.ExecuteStaticMethod("KatzAssembly.Katz", "Exec");
+
+            Console.WriteLine("Press enter to clear Appdomain");
+            Console.ReadLine();
+            AppDomain.Unload(ad);
+            ad = null;
+            GC.Collect();
+            GC.WaitForFullGCComplete();
+            Console.WriteLine("Appdomain cleared");
+            Console.ReadLine();
+
+        }
+
+        class Loader : MarshalByRefObject
+        {
+            private Assembly _assembly;
+
+            public override object InitializeLifetimeService()
+            {
+                return null;
+            }
+
+            public void LoadAssembly(string path)
+            {
+                _assembly = Assembly.Load(AssemblyName.GetAssemblyName(path));
+            }
+
+            public void LoadAssembly(byte[] bytes)
+            {
+                _assembly = Assembly.Load(bytes);
+            }
+
+
+            public object ExecuteStaticMethod(string typeName, string methodName, params object[] parameters)
+            {
+                Type type = _assembly.GetType(typeName);
+                // TODO: this won't work if there are overloads available
+                MethodInfo method = type.GetMethod(
+                    methodName,
+                    BindingFlags.Static | BindingFlags.Public);
+                return method.Invoke(null, parameters);
+            }
         }
     }
 }

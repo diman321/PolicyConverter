@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio 12.0\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
-<FxCopReport Version="12.0">
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio\2017\professional\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="15.0">
  <Targets>
-  <Target Name="C:\Users\amrodchenko\Documents\Visual Studio 2013\Projects\PolicyConverterNG\WindowsFormsApplication1\bin\Debug\PolycyConverter.exe">
+  <Target Name="E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1\bin\Debug\PolycyConverter.exe">
    <Modules>
     <Module Name="polycyconverter.exe">
      <Messages>
-      <Message TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="NonBreaking">
+      <Message TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="NonBreaking">
        <Issue Certainty="95" Level="Error">Пометьте 'PolycyConverter.exe' как CLSCompliant(true), поскольку он предоставляет типы, видимые извне.</Issue>
       </Message>
-      <Message TypeName="MarkAssembliesWithComVisible" Category="Microsoft.Design" CheckId="CA1017" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="NonBreaking">
+      <Message TypeName="MarkAssembliesWithComVisible" Category="Microsoft.Design" CheckId="CA1017" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="NonBreaking">
        <Issue Name="AttributeTrue" Certainty="95" Level="Error">Рассмотрите возможность присвоения атрибуту ComVisible сборки 'PolycyConverter.exe' значения "false" и установки нужных значений этого параметра на уровне типов.</Issue>
       </Message>
      </Messages>
@@ -20,8 +20,8 @@
          <Members>
           <Member Name="#Form2_MouseClick(System.Object,System.Windows.Forms.MouseEventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="NonBreaking">
-             <Issue Certainty="95" Level="CriticalError" Path="c:\Users\amrodchenko\Documents\Visual Studio 2013\Projects\PolicyConverterNG\WindowsFormsApplication1" File="Form2.cs" Line="37">Измените 'Form2.Form2_MouseClick(object, MouseEventArgs)' так, чтобы перехватывались более специфические, чем 'object', исключения, либо обеспечьте повторное порождение исключения.</Issue>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1" File="Form2.cs" Line="37">Измените 'Form2.Form2_MouseClick(object, MouseEventArgs)' так, чтобы перехватывались более специфические, чем 'object', исключения, либо обеспечьте повторное порождение исключения.</Issue>
             </Message>
            </Messages>
           </Member>
@@ -31,8 +31,8 @@
          <Members>
           <Member Name="#Form3_MouseClick(System.Object,System.Windows.Forms.MouseEventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="NonBreaking">
-             <Issue Certainty="95" Level="CriticalError" Path="c:\Users\amrodchenko\Documents\Visual Studio 2013\Projects\PolicyConverterNG\WindowsFormsApplication1" File="Form3.cs" Line="40">Измените 'Form3.Form3_MouseClick(object, MouseEventArgs)' так, чтобы перехватывались более специфические, чем 'object', исключения, либо обеспечьте повторное порождение исключения.</Issue>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1" File="Form3.cs" Line="40">Измените 'Form3.Form3_MouseClick(object, MouseEventArgs)' так, чтобы перехватывались более специфические, чем 'object', исключения, либо обеспечьте повторное порождение исключения.</Issue>
             </Message>
            </Messages>
           </Member>
@@ -46,247 +46,287 @@
          <Members>
           <Member Name="#AddAllNodeList(Microsoft.Office.Interop.Excel.Workbook)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="AvoidExcessiveComplexity" Category="Microsoft.Maintainability" CheckId="CA1502" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="NonBreaking">
-             <Issue Certainty="90" Level="Warning" Path="c:\Users\amrodchenko\Documents\Visual Studio 2013\Projects\PolicyConverterNG\WindowsFormsApplication1" File="Delegates.cs" Line="275">'Form1.AddAllNodeList(Workbook)' имеет сложность организации циклов 46. Напишите заново или реструктурируйте метод, чтобы уменьшить сложность до 25.</Issue>
+            <Message TypeName="AvoidExcessiveComplexity" Category="Microsoft.Maintainability" CheckId="CA1502" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="Warning" Path="E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1" File="Delegates.cs" Line="275">'Form1.AddAllNodeList(Workbook)' имеет сложность организации циклов 42. Напишите заново или реструктурируйте метод, чтобы уменьшить сложность до 25.</Issue>
             </Message>
-            <Message TypeName="ConsiderPassingBaseTypesAsParameters" Category="Microsoft.Design" CheckId="CA1011" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
-             <Issue Certainty="50" Level="Error" Path="c:\Users\amrodchenko\Documents\Visual Studio 2013\Projects\PolicyConverterNG\WindowsFormsApplication1" File="Delegates.cs" Line="275">Рассмотрите возможность изменения типа параметра 'WB' в 'Form1.AddAllNodeList(Workbook)' с 'Workbook' на его базовый тип '_Workbook'. По-видимому, данному методу для его реализации требуются только члены базового класса. Отключите вывод этого нарушения, если есть веские основания требовать, чтобы в сигнатуре метода был указан более производный тип.</Issue>
+            <Message TypeName="ConsiderPassingBaseTypesAsParameters" Category="Microsoft.Design" CheckId="CA1011" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="Error" Path="E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1" File="Delegates.cs" Line="275">Рассмотрите возможность изменения типа параметра 'WB' в 'Form1.AddAllNodeList(Workbook)' с 'Workbook' на его базовый тип '_Workbook'. По-видимому, данному методу для его реализации требуются только члены базового класса. Отключите вывод этого нарушения, если есть веские основания требовать, чтобы в сигнатуре метода был указан более производный тип.</Issue>
             </Message>
-            <Message TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="NonBreaking">
-             <Issue Name="IsNullOrEmpty" Certainty="95" Level="Warning" Path="c:\Users\amrodchenko\Documents\Visual Studio 2013\Projects\PolicyConverterNG\WindowsFormsApplication1" File="Delegates.cs" Line="336">Замените вызов 'string.operator ==(string, string)' в 'Form1.AddAllNodeList(Workbook)' вызовом "String.IsNullOrEmpty".</Issue>
+            <Message TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="NonBreaking">
+             <Issue Name="IsNullOrEmpty" Certainty="95" Level="Warning" Path="E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1" File="Delegates.cs" Line="336">Замените вызов 'string.operator ==(string, string)' в 'Form1.AddAllNodeList(Workbook)' вызовом "String.IsNullOrEmpty".</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#AddNetworkObj(System.Collections.Generic.List`1&lt;WindowsFormsApplication1.Form1+ResolvedNetObj&gt;,Microsoft.Office.Interop.Excel.Workbook,Microsoft.Office.Interop.Excel.Worksheet,System.Int32,System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="ConsiderPassingBaseTypesAsParameters" Category="Microsoft.Design" CheckId="CA1011" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
-             <Issue Certainty="50" Level="Error" Path="c:\Users\amrodchenko\Documents\Visual Studio 2013\Projects\PolicyConverterNG\WindowsFormsApplication1" File="Delegates.cs" Line="122">Рассмотрите возможность изменения типа параметра 'WS' в 'Form1.AddNetworkObj(List&lt;Form1.ResolvedNetObj&gt;, Workbook, Worksheet, int, int)' с 'Worksheet' на его базовый тип '_Worksheet'. По-видимому, данному методу для его реализации требуются только члены базового класса. Отключите вывод этого нарушения, если есть веские основания требовать, чтобы в сигнатуре метода был указан более производный тип.</Issue>
+            <Message TypeName="ConsiderPassingBaseTypesAsParameters" Category="Microsoft.Design" CheckId="CA1011" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="Error" Path="E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1" File="Delegates.cs" Line="122">Рассмотрите возможность изменения типа параметра 'WS' в 'Form1.AddNetworkObj(List&lt;Form1.ResolvedNetObj&gt;, Workbook, Worksheet, int, int)' с 'Worksheet' на его базовый тип '_Worksheet'. По-видимому, данному методу для его реализации требуются только члены базового класса. Отключите вывод этого нарушения, если есть веские основания требовать, чтобы в сигнатуре метода был указан более производный тип.</Issue>
             </Message>
-            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
-             <Issue Certainty="95" Level="Error" Path="c:\Users\amrodchenko\Documents\Visual Studio 2013\Projects\PolicyConverterNG\WindowsFormsApplication1" File="Delegates.cs" Line="122">Измените 'List&lt;Form1.ResolvedNetObj&gt;' в 'Form1.AddNetworkObj(List&lt;Form1.ResolvedNetObj&gt;, Workbook, Worksheet, int, int)' так, чтобы использовать Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; или KeyedCollection&lt;K,V&gt;</Issue>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1" File="Delegates.cs" Line="122">Измените 'List&lt;Form1.ResolvedNetObj&gt;' в 'Form1.AddNetworkObj(List&lt;Form1.ResolvedNetObj&gt;, Workbook, Worksheet, int, int)' так, чтобы использовать Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; или KeyedCollection&lt;K,V&gt;</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#AddNodeList(Microsoft.Office.Interop.Excel.Workbook)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="AvoidExcessiveComplexity" Category="Microsoft.Maintainability" CheckId="CA1502" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="NonBreaking">
-             <Issue Certainty="90" Level="Warning" Path="c:\Users\amrodchenko\Documents\Visual Studio 2013\Projects\PolicyConverterNG\WindowsFormsApplication1" File="Delegates.cs" Line="197">'Form1.AddNodeList(Workbook)' имеет сложность организации циклов 41. Напишите заново или реструктурируйте метод, чтобы уменьшить сложность до 25.</Issue>
+            <Message TypeName="AvoidExcessiveComplexity" Category="Microsoft.Maintainability" CheckId="CA1502" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="Warning" Path="E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1" File="Delegates.cs" Line="197">'Form1.AddNodeList(Workbook)' имеет сложность организации циклов 38. Напишите заново или реструктурируйте метод, чтобы уменьшить сложность до 25.</Issue>
             </Message>
-            <Message TypeName="ConsiderPassingBaseTypesAsParameters" Category="Microsoft.Design" CheckId="CA1011" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
-             <Issue Certainty="50" Level="Error" Path="c:\Users\amrodchenko\Documents\Visual Studio 2013\Projects\PolicyConverterNG\WindowsFormsApplication1" File="Delegates.cs" Line="197">Рассмотрите возможность изменения типа параметра 'WB' в 'Form1.AddNodeList(Workbook)' с 'Workbook' на его базовый тип '_Workbook'. По-видимому, данному методу для его реализации требуются только члены базового класса. Отключите вывод этого нарушения, если есть веские основания требовать, чтобы в сигнатуре метода был указан более производный тип.</Issue>
+            <Message TypeName="ConsiderPassingBaseTypesAsParameters" Category="Microsoft.Design" CheckId="CA1011" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="Error" Path="E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1" File="Delegates.cs" Line="197">Рассмотрите возможность изменения типа параметра 'WB' в 'Form1.AddNodeList(Workbook)' с 'Workbook' на его базовый тип '_Workbook'. По-видимому, данному методу для его реализации требуются только члены базового класса. Отключите вывод этого нарушения, если есть веские основания требовать, чтобы в сигнатуре метода был указан более производный тип.</Issue>
             </Message>
-            <Message TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="NonBreaking">
-             <Issue Name="IsNullOrEmpty" Certainty="95" Level="Warning" Path="c:\Users\amrodchenko\Documents\Visual Studio 2013\Projects\PolicyConverterNG\WindowsFormsApplication1" File="Delegates.cs" Line="239">Замените вызов 'string.operator ==(string, string)' в 'Form1.AddNodeList(Workbook)' вызовом "String.IsNullOrEmpty".</Issue>
+            <Message TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="NonBreaking">
+             <Issue Name="IsNullOrEmpty" Certainty="95" Level="Warning" Path="E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1" File="Delegates.cs" Line="239">Замените вызов 'string.operator ==(string, string)' в 'Form1.AddNodeList(Workbook)' вызовом "String.IsNullOrEmpty".</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#AddWStoWB(WindowsFormsApplication1.Form1+ResolvedNetObj,Microsoft.Office.Interop.Excel.Workbook)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="ConsiderPassingBaseTypesAsParameters" Category="Microsoft.Design" CheckId="CA1011" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
-             <Issue Certainty="50" Level="Error" Path="c:\Users\amrodchenko\Documents\Visual Studio 2013\Projects\PolicyConverterNG\WindowsFormsApplication1" File="Delegates.cs" Line="102">Рассмотрите возможность изменения типа параметра 'WB' в 'Form1.AddWStoWB(Form1.ResolvedNetObj, Workbook)' с 'Workbook' на его базовый тип '_Workbook'. По-видимому, данному методу для его реализации требуются только члены базового класса. Отключите вывод этого нарушения, если есть веские основания требовать, чтобы в сигнатуре метода был указан более производный тип.</Issue>
+            <Message TypeName="ConsiderPassingBaseTypesAsParameters" Category="Microsoft.Design" CheckId="CA1011" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="Error" Path="E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1" File="Delegates.cs" Line="102">Рассмотрите возможность изменения типа параметра 'WB' в 'Form1.AddWStoWB(Form1.ResolvedNetObj, Workbook)' с 'Workbook' на его базовый тип '_Workbook'. По-видимому, данному методу для его реализации требуются только члены базового класса. Отключите вывод этого нарушения, если есть веские основания требовать, чтобы в сигнатуре метода был указан более производный тип.</Issue>
             </Message>
-            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="DependsOnFix">
-             <Issue Certainty="95" Level="Warning" Path="c:\Users\amrodchenko\Documents\Visual Studio 2013\Projects\PolicyConverterNG\WindowsFormsApplication1" File="Delegates.cs" Line="102">Параметр "this" ("Me" в Visual Basic) никогда не используется в 'Form1.AddWStoWB(Form1.ResolvedNetObj, Workbook)'. Пометьте член как static (или Shared в среде Visual Basic) либо используйте "this" или "Me" в теле метода или хотя бы в одном методе доступа к свойству.</Issue>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="DependsOnFix">
+             <Issue Certainty="95" Level="Warning" Path="E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1" File="Delegates.cs" Line="102">Параметр "this" ("Me" в Visual Basic) никогда не используется в 'Form1.AddWStoWB(Form1.ResolvedNetObj, Workbook)'. Пометьте член как static (или Shared в среде Visual Basic) либо используйте "this" или "Me" в теле метода или хотя бы в одном методе доступа к свойству.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#AllocConsole()" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MovePInvokesToNativeMethodsClass" Category="Microsoft.Design" CheckId="CA1060" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="CriticalWarning">Так как метод является методом P/Invoke, 'Form1.AllocConsole()' должен быть определен в классе с именем NativeMethods, SafeNativeMethods или UnsafeNativeMethods.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#AllWSNames" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
              <Issue Certainty="95" Level="Error">Измените 'List&lt;string&gt;' в 'Form1.AllWSNames' так, чтобы использовать Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; или KeyedCollection&lt;K,V&gt;</Issue>
             </Message>
-            <Message TypeName="NonConstantFieldsShouldNotBeVisible" Category="Microsoft.Usage" CheckId="CA2211" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
+            <Message TypeName="NonConstantFieldsShouldNotBeVisible" Category="Microsoft.Usage" CheckId="CA2211" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
              <Issue Certainty="90" Level="Warning">Попробуйте сделать 'Form1.AllWSNames' не открытым или константой.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#aTimer" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="NonConstantFieldsShouldNotBeVisible" Category="Microsoft.Usage" CheckId="CA2211" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
+            <Message TypeName="NonConstantFieldsShouldNotBeVisible" Category="Microsoft.Usage" CheckId="CA2211" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
              <Issue Certainty="90" Level="Warning">Попробуйте сделать 'Form1.aTimer' не открытым или константой.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#button1_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="AvoidExcessiveComplexity" Category="Microsoft.Maintainability" CheckId="CA1502" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="NonBreaking">
-             <Issue Certainty="90" Level="Error" Path="c:\Users\amrodchenko\Documents\Visual Studio 2013\Projects\PolicyConverterNG\WindowsFormsApplication1" File="Form1.cs" Line="325">'Form1.button1_Click(object, EventArgs)' имеет сложность организации циклов 76. Напишите заново или реструктурируйте метод, чтобы уменьшить сложность до 25.</Issue>
+            <Message TypeName="AvoidExcessiveComplexity" Category="Microsoft.Maintainability" CheckId="CA1502" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="CriticalWarning" Path="E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1" File="Form1.cs" Line="327">'Form1.button1_Click(object, EventArgs)' имеет сложность организации циклов 74. Напишите заново или реструктурируйте метод, чтобы уменьшить сложность до 25.</Issue>
             </Message>
-            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="NonBreaking">
-             <Issue Certainty="95" Level="CriticalError" Path="c:\Users\amrodchenko\Documents\Visual Studio 2013\Projects\PolicyConverterNG\WindowsFormsApplication1" File="Form1.cs" Line="588">Измените 'Form1.button1_Click(object, EventArgs)' так, чтобы перехватывались более специфические, чем 'Exception', исключения, либо обеспечьте повторное порождение исключения.</Issue>
+            <Message TypeName="AvoidExcessiveLocals" Category="Microsoft.Performance" CheckId="CA1809" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="NonBreaking">
+             <Issue Name="Compiler" Certainty="95" Level="Warning" Path="E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1" File="Form1.cs" Line="327">'Form1.button1_Click(object, EventArgs)' имеет 85 локальных переменных, 44 из которых могут быть порождены компилятором. Выполните рефакторинг 'Form1.button1_Click(object, EventArgs)' так, чтобы использовалось менее 64 переменных.</Issue>
+            </Message>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1" File="Form1.cs" Line="590">Измените 'Form1.button1_Click(object, EventArgs)' так, чтобы перехватывались более специфические, чем 'Exception', исключения, либо обеспечьте повторное порождение исключения.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#CurrentErrorObjResolved" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
              <Issue Certainty="95" Level="Error">Измените 'List&lt;List&lt;string&gt;&gt;' в 'Form1.CurrentErrorObjResolved' так, чтобы использовать Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; или KeyedCollection&lt;K,V&gt;</Issue>
             </Message>
-            <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
+            <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
              <Issue Certainty="95" Level="CriticalError">Рассмотрите вариант проектирования, когда 'Form1.CurrentErrorObjResolved' не использует вложенный универсальный тип 'List&lt;List&lt;string&gt;&gt;'.</Issue>
             </Message>
-            <Message TypeName="NonConstantFieldsShouldNotBeVisible" Category="Microsoft.Usage" CheckId="CA2211" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
+            <Message TypeName="NonConstantFieldsShouldNotBeVisible" Category="Microsoft.Usage" CheckId="CA2211" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
              <Issue Certainty="90" Level="Warning">Попробуйте сделать 'Form1.CurrentErrorObjResolved' не открытым или константой.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#GetNets()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
-             <Issue Certainty="95" Level="Error" Path="c:\Users\amrodchenko\Documents\Visual Studio 2013\Projects\PolicyConverterNG\WindowsFormsApplication1" File="Networks.cs" Line="91">Измените 'List&lt;Form1.NetInfo&gt;' в 'Form1.GetNets()' так, чтобы использовать Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; или KeyedCollection&lt;K,V&gt;</Issue>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1" File="Networks.cs" Line="91">Измените 'List&lt;Form1.NetInfo&gt;' в 'Form1.GetNets()' так, чтобы использовать Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; или KeyedCollection&lt;K,V&gt;</Issue>
             </Message>
-            <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
-             <Issue Certainty="50" Level="Warning" Path="c:\Users\amrodchenko\Documents\Visual Studio 2013\Projects\PolicyConverterNG\WindowsFormsApplication1" File="Networks.cs" Line="91">Замените 'Form1.GetNets()' свойством, если это уместно.</Issue>
+            <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="Warning" Path="E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1" File="Networks.cs" Line="91">Замените 'Form1.GetNets()' свойством, если это уместно.</Issue>
             </Message>
-            <Message TypeName="Не ликвидировать объекты несколько раз" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="DependsOnFix">
-             <Issue Certainty="75" Level="Warning" Path="c:\Users\amrodchenko\Documents\Visual Studio 2013\Projects\PolicyConverterNG\WindowsFormsApplication1" File="Networks.cs" Line="128">Объект "'connection'" можно удалять более одного раза в методе 'Form1.GetNets()'. Чтобы избежать исключения System.ObjectDisposedException, следует вызывать метод "Dispose" для объекта только один раз.: Lines: 128, 173, 174</Issue>
-             <Issue Certainty="75" Level="Warning" Path="c:\Users\amrodchenko\Documents\Visual Studio 2013\Projects\PolicyConverterNG\WindowsFormsApplication1" File="Networks.cs" Line="125">Объект "'dataReader'" можно удалять более одного раза в методе 'Form1.GetNets()'. Чтобы избежать исключения System.ObjectDisposedException, следует вызывать метод "Dispose" для объекта только один раз.: Lines: 125</Issue>
-             <Issue Certainty="75" Level="Warning" Path="c:\Users\amrodchenko\Documents\Visual Studio 2013\Projects\PolicyConverterNG\WindowsFormsApplication1" File="Networks.cs" Line="171">Объект "'dataReader'" можно удалять более одного раза в методе 'Form1.GetNets()'. Чтобы избежать исключения System.ObjectDisposedException, следует вызывать метод "Dispose" для объекта только один раз.: Lines: 171</Issue>
+            <Message TypeName="Не ликвидировать объекты несколько раз" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1" File="Networks.cs" Line="128">Объект "'connection'" можно удалять более одного раза в методе 'Form1.GetNets()'. Чтобы избежать исключения System.ObjectDisposedException, следует вызывать метод "Dispose" для объекта только один раз.: Lines: 128, 173, 174</Issue>
+             <Issue Certainty="75" Level="Warning" Path="E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1" File="Networks.cs" Line="125">Объект "'dataReader'" можно удалять более одного раза в методе 'Form1.GetNets()'. Чтобы избежать исключения System.ObjectDisposedException, следует вызывать метод "Dispose" для объекта только один раз.: Lines: 125</Issue>
+             <Issue Certainty="75" Level="Warning" Path="E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1" File="Networks.cs" Line="171">Объект "'dataReader'" можно удалять более одного раза в методе 'Form1.GetNets()'. Чтобы избежать исключения System.ObjectDisposedException, следует вызывать метод "Dispose" для объекта только один раз.: Lines: 171</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#GetResolvedNetObj(System.Collections.Generic.List`1&lt;System.String&gt;)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
-             <Issue Certainty="95" Level="Error" Path="c:\Users\amrodchenko\Documents\Visual Studio 2013\Projects\PolicyConverterNG\WindowsFormsApplication1" File="Delegates.cs" Line="166">Измените 'List&lt;Form1.ResolvedNetObj&gt;' в 'Form1.GetResolvedNetObj(List&lt;string&gt;)' так, чтобы использовать Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; или KeyedCollection&lt;K,V&gt;</Issue>
-             <Issue Certainty="95" Level="Error" Path="c:\Users\amrodchenko\Documents\Visual Studio 2013\Projects\PolicyConverterNG\WindowsFormsApplication1" File="Delegates.cs" Line="166">Измените 'List&lt;string&gt;' в 'Form1.GetResolvedNetObj(List&lt;string&gt;)' так, чтобы использовать Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; или KeyedCollection&lt;K,V&gt;</Issue>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1" File="Delegates.cs" Line="166">Измените 'List&lt;Form1.ResolvedNetObj&gt;' в 'Form1.GetResolvedNetObj(List&lt;string&gt;)' так, чтобы использовать Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; или KeyedCollection&lt;K,V&gt;</Issue>
+             <Issue Certainty="95" Level="Error" Path="E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1" File="Delegates.cs" Line="166">Измените 'List&lt;string&gt;' в 'Form1.GetResolvedNetObj(List&lt;string&gt;)' так, чтобы использовать Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; или KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetStdHandle(System.UInt32)" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MovePInvokesToNativeMethodsClass" Category="Microsoft.Design" CheckId="CA1060" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="CriticalWarning">Так как метод является методом P/Invoke, 'Form1.GetStdHandle(uint)' должен быть определен в классе с именем NativeMethods, SafeNativeMethods или UnsafeNativeMethods.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#Network2IpRange(System.String,System.UInt32&amp;,System.UInt32&amp;)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="DependsOnFix">
-             <Issue Certainty="95" Level="Warning" Path="c:\Users\amrodchenko\Documents\Visual Studio 2013\Projects\PolicyConverterNG\WindowsFormsApplication1" File="Networks.cs" Line="55">Параметр "this" ("Me" в Visual Basic) никогда не используется в 'Form1.Network2IpRange(string, out uint, out uint)'. Пометьте член как static (или Shared в среде Visual Basic) либо используйте "this" или "Me" в теле метода или хотя бы в одном методе доступа к свойству.</Issue>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="DependsOnFix">
+             <Issue Certainty="95" Level="Warning" Path="E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1" File="Networks.cs" Line="55">Параметр "this" ("Me" в Visual Basic) никогда не используется в 'Form1.Network2IpRange(string, out uint, out uint)'. Пометьте член как static (или Shared в среде Visual Basic) либо используйте "this" или "Me" в теле метода или хотя бы в одном методе доступа к свойству.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#NetworkObj" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
              <Issue Certainty="95" Level="Error">Измените 'List&lt;List&lt;IEnumerable&lt;string&gt;&gt;&gt;' в 'Form1.NetworkObj' так, чтобы использовать Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; или KeyedCollection&lt;K,V&gt;</Issue>
             </Message>
-            <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
+            <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
              <Issue Certainty="95" Level="CriticalError">Рассмотрите вариант проектирования, когда 'Form1.NetworkObj' не использует вложенный универсальный тип 'List&lt;List&lt;IEnumerable&lt;string&gt;&gt;&gt;'.</Issue>
             </Message>
-            <Message TypeName="NonConstantFieldsShouldNotBeVisible" Category="Microsoft.Usage" CheckId="CA2211" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
+            <Message TypeName="NonConstantFieldsShouldNotBeVisible" Category="Microsoft.Usage" CheckId="CA2211" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
              <Issue Certainty="90" Level="Warning">Попробуйте сделать 'Form1.NetworkObj' не открытым или константой.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#NetworkObjd(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
-             <Issue Certainty="95" Level="Error" Path="c:\Users\amrodchenko\Documents\Visual Studio 2013\Projects\PolicyConverterNG\WindowsFormsApplication1" File="Delegates.cs" Line="56">Измените 'List&lt;List&lt;IEnumerable&lt;string&gt;&gt;&gt;' в 'Form1.NetworkObjd(string)' так, чтобы использовать Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; или KeyedCollection&lt;K,V&gt;</Issue>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1" File="Delegates.cs" Line="56">Измените 'List&lt;List&lt;IEnumerable&lt;string&gt;&gt;&gt;' в 'Form1.NetworkObjd(string)' так, чтобы использовать Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; или KeyedCollection&lt;K,V&gt;</Issue>
             </Message>
-            <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
-             <Issue Certainty="95" Level="CriticalError" Path="c:\Users\amrodchenko\Documents\Visual Studio 2013\Projects\PolicyConverterNG\WindowsFormsApplication1" File="Delegates.cs" Line="56">Рассмотрите вариант проектирования, когда 'Form1.NetworkObjd(string)' не использует вложенный универсальный тип 'List&lt;List&lt;IEnumerable&lt;string&gt;&gt;&gt;'.</Issue>
+            <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="CriticalError" Path="E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1" File="Delegates.cs" Line="56">Рассмотрите вариант проектирования, когда 'Form1.NetworkObjd(string)' не использует вложенный универсальный тип 'List&lt;List&lt;IEnumerable&lt;string&gt;&gt;&gt;'.</Issue>
             </Message>
-            <Message TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="NonBreaking">
-             <Issue Name="IsNullOrEmpty" Certainty="95" Level="Warning" Path="c:\Users\amrodchenko\Documents\Visual Studio 2013\Projects\PolicyConverterNG\WindowsFormsApplication1" File="Delegates.cs" Line="71">Замените вызов 'string.operator !=(string, string)' в 'Form1.NetworkObjd(string)' вызовом "String.IsNullOrEmpty".</Issue>
+            <Message TypeName="PassSystemUriObjectsInsteadOfStrings" Category="Microsoft.Usage" CheckId="CA2234" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning" Path="E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1" File="Delegates.cs" Line="56">Измените 'Form1.NetworkObjd(string)' так, чтобы она вызывала 'HtmlWeb.Load(Uri)' вместо 'HtmlWeb.Load(string)'.</Issue>
+            </Message>
+            <Message TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="NonBreaking">
+             <Issue Name="IsNullOrEmpty" Certainty="95" Level="Warning" Path="E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1" File="Delegates.cs" Line="71">Замените вызов 'string.operator !=(string, string)' в 'Form1.NetworkObjd(string)' вызовом "String.IsNullOrEmpty".</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#progressBar2" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
              <Issue Certainty="90" Level="Error">Так как поле 'Form1.progressBar2' является видимым извне объявляющего его типа, необходимо изменить уровень доступа на частный и добавить свойство, имеющее тот же уровень доступа, что и поле, чтобы обеспечить доступ к нему.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#ResolveNetObj(System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="NonBreaking">
-             <Issue Certainty="95" Level="CriticalError" Path="c:\Users\amrodchenko\Documents\Visual Studio 2013\Projects\PolicyConverterNG\WindowsFormsApplication1" File="Form1.cs" Line="243">Измените 'Form1.ResolveNetObj(string)' так, чтобы перехватывались более специфические, чем 'Exception', исключения, либо обеспечьте повторное порождение исключения.</Issue>
+            <Message TypeName="AvoidExcessiveComplexity" Category="Microsoft.Maintainability" CheckId="CA1502" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="Warning" Path="E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1" File="Form1.cs" Line="172">'Form1.ResolveNetObj(string)' имеет сложность организации циклов 38. Напишите заново или реструктурируйте метод, чтобы уменьшить сложность до 25.</Issue>
             </Message>
-            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
-             <Issue Certainty="95" Level="Error" Path="c:\Users\amrodchenko\Documents\Visual Studio 2013\Projects\PolicyConverterNG\WindowsFormsApplication1" File="Form1.cs" Line="170">Измените 'List&lt;List&lt;string&gt;&gt;' в 'Form1.ResolveNetObj(string)' так, чтобы использовать Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; или KeyedCollection&lt;K,V&gt;</Issue>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1" File="Form1.cs" Line="245">Измените 'Form1.ResolveNetObj(string)' так, чтобы перехватывались более специфические, чем 'Exception', исключения, либо обеспечьте повторное порождение исключения.</Issue>
             </Message>
-            <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
-             <Issue Certainty="95" Level="CriticalError" Path="c:\Users\amrodchenko\Documents\Visual Studio 2013\Projects\PolicyConverterNG\WindowsFormsApplication1" File="Form1.cs" Line="170">Рассмотрите вариант проектирования, когда 'Form1.ResolveNetObj(string)' не использует вложенный универсальный тип 'List&lt;List&lt;string&gt;&gt;'.</Issue>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1" File="Form1.cs" Line="172">Измените 'List&lt;List&lt;string&gt;&gt;' в 'Form1.ResolveNetObj(string)' так, чтобы использовать Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; или KeyedCollection&lt;K,V&gt;</Issue>
             </Message>
-            <Message Id="tmp" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="NonBreaking">
-             <Issue Certainty="95" Level="Warning" Path="c:\Users\amrodchenko\Documents\Visual Studio 2013\Projects\PolicyConverterNG\WindowsFormsApplication1" File="Form1.cs" Line="184">'Form1.ResolveNetObj(string)' объявляет переменную 'tmp' типа 'string', которая никогда не используется или которой только присваивается значение. Используйте эту переменную, или удалите ее.</Issue>
+            <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="CriticalError" Path="E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1" File="Form1.cs" Line="172">Рассмотрите вариант проектирования, когда 'Form1.ResolveNetObj(string)' не использует вложенный универсальный тип 'List&lt;List&lt;string&gt;&gt;'.</Issue>
             </Message>
-            <Message TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="NonBreaking">
-             <Issue Name="IsNullOrEmpty" Certainty="95" Level="Warning" Path="c:\Users\amrodchenko\Documents\Visual Studio 2013\Projects\PolicyConverterNG\WindowsFormsApplication1" File="Form1.cs" Line="210">Замените вызов 'string.operator ==(string, string)' в 'Form1.ResolveNetObj(string)' вызовом "String.IsNullOrEmpty".</Issue>
+            <Message Id="tmp" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1" File="Form1.cs" Line="186">'Form1.ResolveNetObj(string)' объявляет переменную 'tmp' типа 'string', которая никогда не используется или которой только присваивается значение. Используйте эту переменную, или удалите ее.</Issue>
+            </Message>
+            <Message TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="NonBreaking">
+             <Issue Name="IsNullOrEmpty" Certainty="95" Level="Warning" Path="E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1" File="Form1.cs" Line="212">Замените вызов 'string.operator ==(string, string)' в 'Form1.ResolveNetObj(string)' вызовом "String.IsNullOrEmpty".</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#ResolvePorts(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="NonBreaking">
-             <Issue Certainty="95" Level="CriticalError" Path="c:\Users\amrodchenko\Documents\Visual Studio 2013\Projects\PolicyConverterNG\WindowsFormsApplication1" File="Form1.cs" Line="312">Измените 'Form1.ResolvePorts(string)' так, чтобы перехватывались более специфические, чем 'Exception', исключения, либо обеспечьте повторное порождение исключения.</Issue>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1" File="Form1.cs" Line="314">Измените 'Form1.ResolvePorts(string)' так, чтобы перехватывались более специфические, чем 'Exception', исключения, либо обеспечьте повторное порождение исключения.</Issue>
             </Message>
-            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
-             <Issue Certainty="95" Level="Error" Path="c:\Users\amrodchenko\Documents\Visual Studio 2013\Projects\PolicyConverterNG\WindowsFormsApplication1" File="Form1.cs" Line="258">Измените 'List&lt;List&lt;string&gt;&gt;' в 'Form1.ResolvePorts(string)' так, чтобы использовать Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; или KeyedCollection&lt;K,V&gt;</Issue>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1" File="Form1.cs" Line="260">Измените 'List&lt;List&lt;string&gt;&gt;' в 'Form1.ResolvePorts(string)' так, чтобы использовать Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; или KeyedCollection&lt;K,V&gt;</Issue>
             </Message>
-            <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
-             <Issue Certainty="95" Level="CriticalError" Path="c:\Users\amrodchenko\Documents\Visual Studio 2013\Projects\PolicyConverterNG\WindowsFormsApplication1" File="Form1.cs" Line="258">Рассмотрите вариант проектирования, когда 'Form1.ResolvePorts(string)' не использует вложенный универсальный тип 'List&lt;List&lt;string&gt;&gt;'.</Issue>
+            <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="CriticalError" Path="E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1" File="Form1.cs" Line="260">Рассмотрите вариант проектирования, когда 'Form1.ResolvePorts(string)' не использует вложенный универсальный тип 'List&lt;List&lt;string&gt;&gt;'.</Issue>
             </Message>
-            <Message TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="NonBreaking">
-             <Issue Name="IsNullOrEmpty" Certainty="95" Level="Warning" Path="c:\Users\amrodchenko\Documents\Visual Studio 2013\Projects\PolicyConverterNG\WindowsFormsApplication1" File="Form1.cs" Line="298">Замените вызов 'string.operator ==(string, string)' в 'Form1.ResolvePorts(string)' вызовом "String.IsNullOrEmpty".</Issue>
+            <Message TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="NonBreaking">
+             <Issue Name="IsNullOrEmpty" Certainty="95" Level="Warning" Path="E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1" File="Form1.cs" Line="300">Замените вызов 'string.operator ==(string, string)' в 'Form1.ResolvePorts(string)' вызовом "String.IsNullOrEmpty".</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#returnNet(System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="AvoidExcessiveComplexity" Category="Microsoft.Maintainability" CheckId="CA1502" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="NonBreaking">
-             <Issue Certainty="90" Level="Warning" Path="c:\Users\amrodchenko\Documents\Visual Studio 2013\Projects\PolicyConverterNG\WindowsFormsApplication1" File="Form1.cs" Line="59">'Form1.returnNet(string)' имеет сложность организации циклов 37. Напишите заново или реструктурируйте метод, чтобы уменьшить сложность до 25.</Issue>
+            <Message TypeName="AvoidExcessiveComplexity" Category="Microsoft.Maintainability" CheckId="CA1502" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="Error" Path="E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1" File="Form1.cs" Line="61">'Form1.returnNet(string)' имеет сложность организации циклов 82. Напишите заново или реструктурируйте метод, чтобы уменьшить сложность до 25.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#Rules" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
              <Issue Certainty="95" Level="Error">Измените 'List&lt;List&lt;string&gt;&gt;' в 'Form1.Rules' так, чтобы использовать Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; или KeyedCollection&lt;K,V&gt;</Issue>
             </Message>
-            <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
+            <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
              <Issue Certainty="95" Level="CriticalError">Рассмотрите вариант проектирования, когда 'Form1.Rules' не использует вложенный универсальный тип 'List&lt;List&lt;string&gt;&gt;'.</Issue>
             </Message>
-            <Message TypeName="NonConstantFieldsShouldNotBeVisible" Category="Microsoft.Usage" CheckId="CA2211" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
+            <Message TypeName="NonConstantFieldsShouldNotBeVisible" Category="Microsoft.Usage" CheckId="CA2211" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
              <Issue Certainty="90" Level="Warning">Попробуйте сделать 'Form1.Rules' не открытым или константой.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#Rulesd(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
-             <Issue Certainty="95" Level="Error" Path="c:\Users\amrodchenko\Documents\Visual Studio 2013\Projects\PolicyConverterNG\WindowsFormsApplication1" File="Delegates.cs" Line="34">Измените 'List&lt;List&lt;string&gt;&gt;' в 'Form1.Rulesd(string)' так, чтобы использовать Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; или KeyedCollection&lt;K,V&gt;</Issue>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1" File="Delegates.cs" Line="34">Измените 'List&lt;List&lt;string&gt;&gt;' в 'Form1.Rulesd(string)' так, чтобы использовать Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; или KeyedCollection&lt;K,V&gt;</Issue>
             </Message>
-            <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
-             <Issue Certainty="95" Level="CriticalError" Path="c:\Users\amrodchenko\Documents\Visual Studio 2013\Projects\PolicyConverterNG\WindowsFormsApplication1" File="Delegates.cs" Line="34">Рассмотрите вариант проектирования, когда 'Form1.Rulesd(string)' не использует вложенный универсальный тип 'List&lt;List&lt;string&gt;&gt;'.</Issue>
+            <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="CriticalError" Path="E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1" File="Delegates.cs" Line="34">Рассмотрите вариант проектирования, когда 'Form1.Rulesd(string)' не использует вложенный универсальный тип 'List&lt;List&lt;string&gt;&gt;'.</Issue>
+            </Message>
+            <Message TypeName="PassSystemUriObjectsInsteadOfStrings" Category="Microsoft.Usage" CheckId="CA2234" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning" Path="E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1" File="Delegates.cs" Line="34">Измените 'Form1.Rulesd(string)' так, чтобы она вызывала 'HtmlWeb.Load(Uri)' вместо 'HtmlWeb.Load(string)'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#Services" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
              <Issue Certainty="95" Level="Error">Измените 'List&lt;List&lt;string&gt;&gt;' в 'Form1.Services' так, чтобы использовать Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; или KeyedCollection&lt;K,V&gt;</Issue>
             </Message>
-            <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
+            <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
              <Issue Certainty="95" Level="CriticalError">Рассмотрите вариант проектирования, когда 'Form1.Services' не использует вложенный универсальный тип 'List&lt;List&lt;string&gt;&gt;'.</Issue>
             </Message>
-            <Message TypeName="NonConstantFieldsShouldNotBeVisible" Category="Microsoft.Usage" CheckId="CA2211" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
+            <Message TypeName="NonConstantFieldsShouldNotBeVisible" Category="Microsoft.Usage" CheckId="CA2211" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
              <Issue Certainty="90" Level="Warning">Попробуйте сделать 'Form1.Services' не открытым или константой.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#Servicesd(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
-             <Issue Certainty="95" Level="Error" Path="c:\Users\amrodchenko\Documents\Visual Studio 2013\Projects\PolicyConverterNG\WindowsFormsApplication1" File="Delegates.cs" Line="82">Измените 'List&lt;List&lt;string&gt;&gt;' в 'Form1.Servicesd(string)' так, чтобы использовать Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; или KeyedCollection&lt;K,V&gt;</Issue>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1" File="Delegates.cs" Line="82">Измените 'List&lt;List&lt;string&gt;&gt;' в 'Form1.Servicesd(string)' так, чтобы использовать Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; или KeyedCollection&lt;K,V&gt;</Issue>
             </Message>
-            <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
-             <Issue Certainty="95" Level="CriticalError" Path="c:\Users\amrodchenko\Documents\Visual Studio 2013\Projects\PolicyConverterNG\WindowsFormsApplication1" File="Delegates.cs" Line="82">Рассмотрите вариант проектирования, когда 'Form1.Servicesd(string)' не использует вложенный универсальный тип 'List&lt;List&lt;string&gt;&gt;'.</Issue>
+            <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="CriticalError" Path="E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1" File="Delegates.cs" Line="82">Рассмотрите вариант проектирования, когда 'Form1.Servicesd(string)' не использует вложенный универсальный тип 'List&lt;List&lt;string&gt;&gt;'.</Issue>
+            </Message>
+            <Message TypeName="PassSystemUriObjectsInsteadOfStrings" Category="Microsoft.Usage" CheckId="CA2234" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning" Path="E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1" File="Delegates.cs" Line="82">Измените 'Form1.Servicesd(string)' так, чтобы она вызывала 'HtmlWeb.Load(Uri)' вместо 'HtmlWeb.Load(string)'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SetStdHandle(System.UInt32,System.IntPtr)" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MovePInvokesToNativeMethodsClass" Category="Microsoft.Design" CheckId="CA1060" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="CriticalWarning">Так как метод является методом P/Invoke, 'Form1.SetStdHandle(uint, IntPtr)' должен быть определен в классе с именем NativeMethods, SafeNativeMethods или UnsafeNativeMethods.</Issue>
+            </Message>
+            <Message Id="return" TypeName="PInvokeDeclarationsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1901" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="NonBreaking">
+             <Issue Name="Return" Certainty="95" Level="Error">Как объявлено в вашем коде, тип возвращаемого значения для P/Invoke 'Form1.SetStdHandle(uint, IntPtr)' будет иметь размер 0 байт для 32-разрядных платформ. Это неправильно, поскольку текущее объявление в машинном коде для данного API указывает, что его размер должен быть 4 байт для 32-разрядных платформ. Обратитесь к документации MSDN Platform SDK и выясните, какой тип данных следует использовать вместо 'void'.</Issue>
+             <Issue Name="Return" Certainty="95" Level="Error">Как объявлено в вашем коде, тип возвращаемого значения для P/Invoke 'Form1.SetStdHandle(uint, IntPtr)' будет иметь размер 0 байт для 64-разрядных платформ. Это неправильно, поскольку текущее объявление в машинном коде для данного API указывает, что его размер должен быть 4 байт для 64-разрядных платформ. Обратитесь к документации MSDN Platform SDK и выясните, какой тип данных следует использовать вместо 'void'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#ToNodeList" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
              <Issue Certainty="95" Level="Error">Измените 'List&lt;Form1.ResolvedNetObj&gt;' в 'Form1.ToNodeList' так, чтобы использовать Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; или KeyedCollection&lt;K,V&gt;</Issue>
             </Message>
-            <Message TypeName="NonConstantFieldsShouldNotBeVisible" Category="Microsoft.Usage" CheckId="CA2211" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
+            <Message TypeName="NonConstantFieldsShouldNotBeVisible" Category="Microsoft.Usage" CheckId="CA2211" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
              <Issue Certainty="90" Level="Warning">Попробуйте сделать 'Form1.ToNodeList' не открытым или константой.</Issue>
             </Message>
            </Messages>
@@ -295,10 +335,10 @@
         </Type>
         <Type Name="Form1+IPandNet" Kind="Struct" Accessibility="Public" ExternallyVisible="True">
          <Messages>
-          <Message TypeName="NestedTypesShouldNotBeVisible" Category="Microsoft.Design" CheckId="CA1034" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
+          <Message TypeName="NestedTypesShouldNotBeVisible" Category="Microsoft.Design" CheckId="CA1034" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
            <Issue Certainty="90" Level="Error">Не делайте тип 'Form1.IPandNet' вложенным. Вместо этого измените режим доступа к нему так, чтобы он не был виден извне.</Issue>
           </Message>
-          <Message TypeName="OverrideEqualsAndOperatorEqualsOnValueTypes" Category="Microsoft.Performance" CheckId="CA1815" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="NonBreaking">
+          <Message TypeName="OverrideEqualsAndOperatorEqualsOnValueTypes" Category="Microsoft.Performance" CheckId="CA1815" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="NonBreaking">
            <Issue Name="Equals" Certainty="75" Level="Warning">'Form1.IPandNet' должен переопределить метод Equals.</Issue>
            <Issue Name="op_Equality" Certainty="75" Level="Warning">'Form1.IPandNet' должен переопределить операторы равенства (==) и неравенства (!=).</Issue>
           </Message>
@@ -306,14 +346,14 @@
          <Members>
           <Member Name="#IP" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
              <Issue Certainty="90" Level="Error">Так как поле 'Form1.IPandNet.IP' является видимым извне объявляющего его типа, необходимо изменить уровень доступа на частный и добавить свойство, имеющее тот же уровень доступа, что и поле, чтобы обеспечить доступ к нему.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#NI" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
              <Issue Certainty="90" Level="Error">Так как поле 'Form1.IPandNet.NI' является видимым извне объявляющего его типа, необходимо изменить уровень доступа на частный и добавить свойство, имеющее тот же уровень доступа, что и поле, чтобы обеспечить доступ к нему.</Issue>
             </Message>
            </Messages>
@@ -322,10 +362,10 @@
         </Type>
         <Type Name="Form1+NetInfo" Kind="Struct" Accessibility="Public" ExternallyVisible="True">
          <Messages>
-          <Message TypeName="NestedTypesShouldNotBeVisible" Category="Microsoft.Design" CheckId="CA1034" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
+          <Message TypeName="NestedTypesShouldNotBeVisible" Category="Microsoft.Design" CheckId="CA1034" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
            <Issue Certainty="90" Level="Error">Не делайте тип 'Form1.NetInfo' вложенным. Вместо этого измените режим доступа к нему так, чтобы он не был виден извне.</Issue>
           </Message>
-          <Message TypeName="OverrideEqualsAndOperatorEqualsOnValueTypes" Category="Microsoft.Performance" CheckId="CA1815" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="NonBreaking">
+          <Message TypeName="OverrideEqualsAndOperatorEqualsOnValueTypes" Category="Microsoft.Performance" CheckId="CA1815" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="NonBreaking">
            <Issue Name="Equals" Certainty="75" Level="Warning">'Form1.NetInfo' должен переопределить метод Equals.</Issue>
            <Issue Name="op_Equality" Certainty="75" Level="Warning">'Form1.NetInfo' должен переопределить операторы равенства (==) и неравенства (!=).</Issue>
           </Message>
@@ -333,28 +373,28 @@
          <Members>
           <Member Name="#Descr" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
              <Issue Certainty="90" Level="Error">Так как поле 'Form1.NetInfo.Descr' является видимым извне объявляющего его типа, необходимо изменить уровень доступа на частный и добавить свойство, имеющее тот же уровень доступа, что и поле, чтобы обеспечить доступ к нему.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#EndIP" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
              <Issue Certainty="90" Level="Error">Так как поле 'Form1.NetInfo.EndIP' является видимым извне объявляющего его типа, необходимо изменить уровень доступа на частный и добавить свойство, имеющее тот же уровень доступа, что и поле, чтобы обеспечить доступ к нему.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#Net" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
              <Issue Certainty="90" Level="Error">Так как поле 'Form1.NetInfo.Net' является видимым извне объявляющего его типа, необходимо изменить уровень доступа на частный и добавить свойство, имеющее тот же уровень доступа, что и поле, чтобы обеспечить доступ к нему.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#StartIP" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
              <Issue Certainty="90" Level="Error">Так как поле 'Form1.NetInfo.StartIP' является видимым извне объявляющего его типа, необходимо изменить уровень доступа на частный и добавить свойство, имеющее тот же уровень доступа, что и поле, чтобы обеспечить доступ к нему.</Issue>
             </Message>
            </Messages>
@@ -363,17 +403,17 @@
         </Type>
         <Type Name="Form1+NetworkObjd_Delegate" Kind="Delegate" Accessibility="Public" ExternallyVisible="True">
          <Messages>
-          <Message TypeName="NestedTypesShouldNotBeVisible" Category="Microsoft.Design" CheckId="CA1034" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
+          <Message TypeName="NestedTypesShouldNotBeVisible" Category="Microsoft.Design" CheckId="CA1034" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
            <Issue Certainty="90" Level="Error">Не делайте тип 'Form1.NetworkObjd_Delegate' вложенным. Вместо этого измените режим доступа к нему так, чтобы он не был виден извне.</Issue>
           </Message>
          </Messages>
          <Members>
           <Member Name="#Invoke(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
              <Issue Certainty="95" Level="Error">Измените 'List&lt;List&lt;IEnumerable&lt;string&gt;&gt;&gt;' в 'Form1.NetworkObjd_Delegate.Invoke(string)' так, чтобы использовать Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; или KeyedCollection&lt;K,V&gt;</Issue>
             </Message>
-            <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
+            <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
              <Issue Certainty="95" Level="CriticalError">Рассмотрите вариант проектирования, когда 'Form1.NetworkObjd_Delegate.Invoke(string)' не использует вложенный универсальный тип 'List&lt;List&lt;IEnumerable&lt;string&gt;&gt;&gt;'.</Issue>
             </Message>
            </Messages>
@@ -382,10 +422,10 @@
         </Type>
         <Type Name="Form1+ResolvedNetObj" Kind="Struct" Accessibility="Public" ExternallyVisible="True">
          <Messages>
-          <Message TypeName="NestedTypesShouldNotBeVisible" Category="Microsoft.Design" CheckId="CA1034" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
+          <Message TypeName="NestedTypesShouldNotBeVisible" Category="Microsoft.Design" CheckId="CA1034" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
            <Issue Certainty="90" Level="Error">Не делайте тип 'Form1.ResolvedNetObj' вложенным. Вместо этого измените режим доступа к нему так, чтобы он не был виден извне.</Issue>
           </Message>
-          <Message TypeName="OverrideEqualsAndOperatorEqualsOnValueTypes" Category="Microsoft.Performance" CheckId="CA1815" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="NonBreaking">
+          <Message TypeName="OverrideEqualsAndOperatorEqualsOnValueTypes" Category="Microsoft.Performance" CheckId="CA1815" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="NonBreaking">
            <Issue Name="Equals" Certainty="75" Level="Warning">'Form1.ResolvedNetObj' должен переопределить метод Equals.</Issue>
            <Issue Name="op_Equality" Certainty="75" Level="Warning">'Form1.ResolvedNetObj' должен переопределить операторы равенства (==) и неравенства (!=).</Issue>
           </Message>
@@ -393,34 +433,34 @@
          <Members>
           <Member Name="#FDQN" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
              <Issue Certainty="90" Level="Error">Так как поле 'Form1.ResolvedNetObj.FDQN' является видимым извне объявляющего его типа, необходимо изменить уровень доступа на частный и добавить свойство, имеющее тот же уровень доступа, что и поле, чтобы обеспечить доступ к нему.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#IsObjectNegated" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
              <Issue Certainty="90" Level="Error">Так как поле 'Form1.ResolvedNetObj.IsObjectNegated' является видимым извне объявляющего его типа, необходимо изменить уровень доступа на частный и добавить свойство, имеющее тот же уровень доступа, что и поле, чтобы обеспечить доступ к нему.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#NetObjName" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
              <Issue Certainty="90" Level="Error">Так как поле 'Form1.ResolvedNetObj.NetObjName' является видимым извне объявляющего его типа, необходимо изменить уровень доступа на частный и добавить свойство, имеющее тот же уровень доступа, что и поле, чтобы обеспечить доступ к нему.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#ResolvedObj" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
              <Issue Certainty="90" Level="Error">Так как поле 'Form1.ResolvedNetObj.ResolvedObj' является видимым извне объявляющего его типа, необходимо изменить уровень доступа на частный и добавить свойство, имеющее тот же уровень доступа, что и поле, чтобы обеспечить доступ к нему.</Issue>
             </Message>
-            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
              <Issue Certainty="95" Level="Error">Измените 'List&lt;List&lt;string&gt;&gt;' в 'Form1.ResolvedNetObj.ResolvedObj' так, чтобы использовать Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; или KeyedCollection&lt;K,V&gt;</Issue>
             </Message>
-            <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
+            <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
              <Issue Certainty="95" Level="CriticalError">Рассмотрите вариант проектирования, когда 'Form1.ResolvedNetObj.ResolvedObj' не использует вложенный универсальный тип 'List&lt;List&lt;string&gt;&gt;'.</Issue>
             </Message>
            </Messages>
@@ -429,17 +469,17 @@
         </Type>
         <Type Name="Form1+Rulesd_Delegate" Kind="Delegate" Accessibility="Public" ExternallyVisible="True">
          <Messages>
-          <Message TypeName="NestedTypesShouldNotBeVisible" Category="Microsoft.Design" CheckId="CA1034" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
+          <Message TypeName="NestedTypesShouldNotBeVisible" Category="Microsoft.Design" CheckId="CA1034" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
            <Issue Certainty="90" Level="Error">Не делайте тип 'Form1.Rulesd_Delegate' вложенным. Вместо этого измените режим доступа к нему так, чтобы он не был виден извне.</Issue>
           </Message>
          </Messages>
          <Members>
           <Member Name="#Invoke(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
              <Issue Certainty="95" Level="Error">Измените 'List&lt;List&lt;string&gt;&gt;' в 'Form1.Rulesd_Delegate.Invoke(string)' так, чтобы использовать Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; или KeyedCollection&lt;K,V&gt;</Issue>
             </Message>
-            <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
+            <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
              <Issue Certainty="95" Level="CriticalError">Рассмотрите вариант проектирования, когда 'Form1.Rulesd_Delegate.Invoke(string)' не использует вложенный универсальный тип 'List&lt;List&lt;string&gt;&gt;'.</Issue>
             </Message>
            </Messages>
@@ -448,17 +488,17 @@
         </Type>
         <Type Name="Form1+Servicesd_Delegate" Kind="Delegate" Accessibility="Public" ExternallyVisible="True">
          <Messages>
-          <Message TypeName="NestedTypesShouldNotBeVisible" Category="Microsoft.Design" CheckId="CA1034" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
+          <Message TypeName="NestedTypesShouldNotBeVisible" Category="Microsoft.Design" CheckId="CA1034" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
            <Issue Certainty="90" Level="Error">Не делайте тип 'Form1.Servicesd_Delegate' вложенным. Вместо этого измените режим доступа к нему так, чтобы он не был виден извне.</Issue>
           </Message>
          </Messages>
          <Members>
           <Member Name="#Invoke(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
              <Issue Certainty="95" Level="Error">Измените 'List&lt;List&lt;string&gt;&gt;' в 'Form1.Servicesd_Delegate.Invoke(string)' так, чтобы использовать Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; или KeyedCollection&lt;K,V&gt;</Issue>
             </Message>
-            <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Status="Active" Created="2015-04-03 06:04:16Z" FixCategory="Breaking">
+            <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Status="Active" Created="2020-01-29 14:55:53Z" FixCategory="Breaking">
              <Issue Certainty="95" Level="CriticalError">Рассмотрите вариант проектирования, когда 'Form1.Servicesd_Delegate.Invoke(string)' не использует вложенный универсальный тип 'List&lt;List&lt;string&gt;&gt;'.</Issue>
             </Message>
            </Messages>
@@ -481,7 +521,17 @@
    <Url>http://msdn.microsoft.com/library/ms182212.aspx</Url>
    <Email>[none]</Email>
    <MessageLevel Certainty="90">Warning</MessageLevel>
-   <File Name="maintainabilityrules.dll" Version="12.0.0.0" />
+   <File Name="maintainabilityrules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="AvoidExcessiveLocals" Category="Microsoft.Performance" CheckId="CA1809">
+   <Name>Избегайте лишних локальных переменных</Name>
+   <Description>Реализация метода не должна содержать более 64 локальных переменных. Чтобы во время выполнения программы эффективно размещать локальные переменные в регистрах процессора, переменных должно быть 64 или меньше. Размещение локальных переменных в регистрах процессора, основанное на анализе потока, не будет выполняться для локальных переменных числом более 64, что может привести к снижению производительности.</Description>
+   <Resolution Name="Compiler">{0} имеет {1} локальных переменных, {2} из которых могут быть порождены компилятором. Выполните рефакторинг {0} так, чтобы использовалось менее 64 переменных.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182263.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="15.0.0.0" />
   </Rule>
   <Rule TypeName="ConsiderPassingBaseTypesAsParameters" Category="Microsoft.Design" CheckId="CA1011">
    <Name>Попробуйте передать базовые типы в качестве параметров</Name>
@@ -491,7 +541,7 @@
    <Url>http://msdn.microsoft.com/library/3hk32yyz.aspx</Url>
    <Email>[none]</Email>
    <MessageLevel Certainty="50">Error</MessageLevel>
-   <File Name="designrules.dll" Version="12.0.0.0" />
+   <File Name="designrules.dll" Version="15.0.0.0" />
   </Rule>
   <Rule TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031">
    <Name>Не перехватывайте типы общих исключений</Name>
@@ -501,7 +551,7 @@
    <Url>http://msdn.microsoft.com/library/ms182137.aspx</Url>
    <Email>[none]</Email>
    <MessageLevel Certainty="95">CriticalError</MessageLevel>
-   <File Name="designrules.dll" Version="12.0.0.0" />
+   <File Name="designrules.dll" Version="15.0.0.0" />
   </Rule>
   <Rule TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051">
    <Name>Не объявляйте видимые поля экземпляров</Name>
@@ -511,7 +561,7 @@
    <Url>http://msdn.microsoft.com/library/ms182141.aspx</Url>
    <Email>[none]</Email>
    <MessageLevel Certainty="90">Error</MessageLevel>
-   <File Name="designrules.dll" Version="12.0.0.0" />
+   <File Name="designrules.dll" Version="15.0.0.0" />
   </Rule>
   <Rule TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002">
    <Name>Не предоставляйте универсальные списки</Name>
@@ -521,7 +571,7 @@
    <Url>http://msdn.microsoft.com/library/ms182142.aspx</Url>
    <Email>[none]</Email>
    <MessageLevel Certainty="95">Error</MessageLevel>
-   <File Name="designrules.dll" Version="12.0.0.0" />
+   <File Name="designrules.dll" Version="15.0.0.0" />
   </Rule>
   <Rule TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006">
    <Name>Не создавайте вложенных универсальных типов в сигнатурах членов</Name>
@@ -531,7 +581,7 @@
    <Url>http://msdn.microsoft.com/library/ms182144.aspx</Url>
    <Email>[none]</Email>
    <MessageLevel Certainty="95">CriticalError</MessageLevel>
-   <File Name="designrules.dll" Version="12.0.0.0" />
+   <File Name="designrules.dll" Version="15.0.0.0" />
   </Rule>
   <Rule TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014">
    <Name>Пометьте сборки атрибутом CLSCompliantAttribute</Name>
@@ -541,7 +591,7 @@
    <Url>http://msdn.microsoft.com/library/ms182156.aspx</Url>
    <Email>[none]</Email>
    <MessageLevel Certainty="95">Error</MessageLevel>
-   <File Name="designrules.dll" Version="12.0.0.0" />
+   <File Name="designrules.dll" Version="15.0.0.0" />
   </Rule>
   <Rule TypeName="MarkAssembliesWithComVisible" Category="Microsoft.Design" CheckId="CA1017">
    <Name>Пометьте сборки с помощью ComVisibleAttribute</Name>
@@ -551,7 +601,7 @@
    <Url>http://msdn.microsoft.com/library/ms182157.aspx</Url>
    <Email>[none]</Email>
    <MessageLevel Certainty="95">CriticalError, Error</MessageLevel>
-   <File Name="designrules.dll" Version="12.0.0.0" />
+   <File Name="designrules.dll" Version="15.0.0.0" />
   </Rule>
   <Rule TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822">
    <Name>Пометьте члены как статические</Name>
@@ -561,7 +611,17 @@
    <Url>http://msdn.microsoft.com/library/ms245046.aspx</Url>
    <Email>[none]</Email>
    <MessageLevel Certainty="95">Warning</MessageLevel>
-   <File Name="performancerules.dll" Version="12.0.0.0" />
+   <File Name="performancerules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="MovePInvokesToNativeMethodsClass" Category="Microsoft.Design" CheckId="CA1060">
+   <Name>Переместите методы P/Invoke в класс NativeMethods</Name>
+   <Description>В этом типе содержатся члены с атрибутом DllImport. Члены с атрибутом DllImport должны содержаться в классах с именем NativeMethods, SafeNativeMethods или UnsafeNativeMethods.</Description>
+   <Resolution Name="Default">Так как метод является методом P/Invoke, {0} должен быть определен в классе с именем NativeMethods, SafeNativeMethods или UnsafeNativeMethods.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182161.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalWarning</MessageLevel>
+   <File Name="designrules.dll" Version="15.0.0.0" />
   </Rule>
   <Rule TypeName="NestedTypesShouldNotBeVisible" Category="Microsoft.Design" CheckId="CA1034">
    <Name>Вложенные типы не должны быть видимыми</Name>
@@ -571,7 +631,7 @@
    <Url>http://msdn.microsoft.com/library/ms182162.aspx</Url>
    <Email>[none]</Email>
    <MessageLevel Certainty="90">Error</MessageLevel>
-   <File Name="designrules.dll" Version="12.0.0.0" />
+   <File Name="designrules.dll" Version="15.0.0.0" />
   </Rule>
   <Rule TypeName="NonConstantFieldsShouldNotBeVisible" Category="Microsoft.Usage" CheckId="CA2211">
    <Name>Поля, не являющиеся константами, не должны быть видимыми</Name>
@@ -581,7 +641,7 @@
    <Url>http://msdn.microsoft.com/library/ms182353.aspx</Url>
    <Email>[none]</Email>
    <MessageLevel Certainty="90">Warning</MessageLevel>
-   <File Name="usagerules.dll" Version="12.0.0.0" />
+   <File Name="usagerules.dll" Version="15.0.0.0" />
   </Rule>
   <Rule TypeName="OverrideEqualsAndOperatorEqualsOnValueTypes" Category="Microsoft.Performance" CheckId="CA1815">
    <Name>Переопределяйте операторы Equals и равенства для типов значений</Name>
@@ -592,7 +652,27 @@
    <Url>http://msdn.microsoft.com/library/ms182276.aspx</Url>
    <Email>[none]</Email>
    <MessageLevel Certainty="75">Warning</MessageLevel>
-   <File Name="performancerules.dll" Version="12.0.0.0" />
+   <File Name="performancerules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="PInvokeDeclarationsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1901">
+   <Name>Объявления P/Invoke должны быть переносимыми</Name>
+   <Description>.</Description>
+   <Resolution Name="Return">Как объявлено в вашем коде, тип возвращаемого значения для P/Invoke {0} будет иметь размер {1} байт для {2} платформ. Это неправильно, поскольку текущее объявление в машинном коде для данного API указывает, что его размер должен быть {3} байт для {2} платформ. Обратитесь к документации MSDN Platform SDK и выясните, какой тип данных следует использовать вместо {4}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182284(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="portabilityrules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="PassSystemUriObjectsInsteadOfStrings" Category="Microsoft.Usage" CheckId="CA2234">
+   <Name>Передавайте объекты System.Uri вместо строк</Name>
+   <Description>Если есть две перегрузки, одна из которых принимает System.Uri, а другая System.String, библиотечный код никогда не должен вызывать перегрузку на основе строки.</Description>
+   <Resolution Name="Default">Измените {0} так, чтобы она вызывала {1} вместо {2}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182360.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="usagerules.dll" Version="15.0.0.0" />
   </Rule>
   <Rule TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804">
    <Name>Удалите неиспользуемые локальные переменные</Name>
@@ -602,7 +682,7 @@
    <Url>http://msdn.microsoft.com/library/ms182278.aspx</Url>
    <Email>[none]</Email>
    <MessageLevel Certainty="95">Warning</MessageLevel>
-   <File Name="performancerules.dll" Version="12.0.0.0" />
+   <File Name="performancerules.dll" Version="15.0.0.0" />
   </Rule>
   <Rule TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820">
    <Name>Проверяйте наличие пустых строк, используя длину строки</Name>
@@ -612,7 +692,7 @@
    <Url>http://msdn.microsoft.com/library/ms182279.aspx</Url>
    <Email>[none]</Email>
    <MessageLevel Certainty="95">Warning</MessageLevel>
-   <File Name="performancerules.dll" Version="12.0.0.0" />
+   <File Name="performancerules.dll" Version="15.0.0.0" />
   </Rule>
   <Rule TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024">
    <Name>Используйте свойства, если это уместно</Name>
@@ -622,7 +702,7 @@
    <Url>http://msdn.microsoft.com/library/ms182181.aspx</Url>
    <Email>[none]</Email>
    <MessageLevel Certainty="75">Warning</MessageLevel>
-   <File Name="designrules.dll" Version="12.0.0.0" />
+   <File Name="designrules.dll" Version="15.0.0.0" />
   </Rule>
   <Rule TypeName="Не ликвидировать объекты несколько раз" Category="Microsoft.Usage" CheckId="CA2202">
    <Name>Не ликвидировать объекты несколько раз</Name>
@@ -632,7 +712,7 @@
    <Url>http://msdn.microsoft.com/library/ms182334.aspx</Url>
    <Email />
    <MessageLevel Certainty="75">Warning</MessageLevel>
-   <File Name="dataflowrules.dll" Version="12.0.0.0" />
+   <File Name="dataflowrules.dll" Version="15.0.0.0" />
   </Rule>
  </Rules>
  <Localized>

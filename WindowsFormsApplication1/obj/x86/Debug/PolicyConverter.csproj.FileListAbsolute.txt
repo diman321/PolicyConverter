@@ -16,3 +16,27 @@ C:\Users\amrodchenko\Documents\Visual Studio 2013\Projects\PolicyConverterNG\Win
 C:\Users\amrodchenko\Documents\Visual Studio 2013\Projects\PolicyConverterNG\WindowsFormsApplication1\obj\x86\Debug\PolicyConverter.csproj.GenerateResource.Cache
 C:\Users\amrodchenko\Documents\Visual Studio 2013\Projects\PolicyConverterNG\WindowsFormsApplication1\obj\x86\Debug\PolycyConverter.exe
 C:\Users\amrodchenko\Documents\Visual Studio 2013\Projects\PolicyConverterNG\WindowsFormsApplication1\obj\x86\Debug\PolycyConverter.pdb
+E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1\bin\x86\Debug\Properties\Resources.resx
+E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1\bin\x86\Debug\Properties\Resources.Designer.cs
+E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1\bin\x86\Debug\PolycyConverter.exe.config
+E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1\bin\x86\Debug\PolycyConverter.exe
+E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1\bin\x86\Debug\PolycyConverter.pdb
+E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1\bin\x86\Debug\PolycyConverter.exe.CodeAnalysisLog.xml
+E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1\bin\x86\Debug\PolycyConverter.exe.lastcodeanalysissucceeded
+E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1\bin\x86\Debug\Google.Protobuf.xml
+E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1\bin\x86\Debug\HtmlAgilityPack.xml
+E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1\bin\x86\Debug\MySql.Data.xml
+E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1\bin\x86\Debug\Renci.SshNet.xml
+E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1\bin\x86\Debug\System.Buffers.xml
+E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1\bin\x86\Debug\System.Memory.xml
+E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1\bin\x86\Debug\System.Runtime.CompilerServices.Unsafe.xml
+E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1\obj\x86\Debug\PolycyConverter.Form2.resources
+E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1\obj\x86\Debug\PolycyConverter.Properties.Resources.resources
+E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1\obj\x86\Debug\PolycyConverter.Form3.resources
+E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1\obj\x86\Debug\PolicyConverter.csproj.GenerateResource.cache
+E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1\obj\x86\Debug\PolicyConverter.csproj.CoreCompileInputs.cache
+E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1\obj\x86\Debug\PolicyConverter.csproj.CopyComplete
+E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1\obj\x86\Debug\PolycyConverter.exe
+E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1\obj\x86\Debug\PolycyConverter.pdb
+E:\Users\RODCHENKO\Documents\GitHub\PolicyConverter_diman\WindowsFormsApplication1\obj\x86\Debug\PolicyConverter.csproj.Fody.CopyLocal.cache
